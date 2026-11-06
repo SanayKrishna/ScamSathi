@@ -1,8 +1,5 @@
 import { motion } from 'motion/react'
-import { Graph, Phone, Presentation } from '@phosphor-icons/react'
-import type { ReactNode } from 'react'
 import { config } from '../config'
-import { EASE } from '../lib/motion'
 import { useStore } from '../store'
 import { DemoMenu } from './DemoMenu'
 
@@ -14,143 +11,123 @@ interface TopBarProps {
   onOpenPresenter: () => void
 }
 
+/**
+ * Quiet, typographic bar in the Linear / Vercel docs style:
+ * lowercase wordmark, plain word tabs with an underline, a mono status line,
+ * and text buttons. No pills, no logo tile, no frosted glass.
+ */
 export function TopBar({ view, onView, onOpenPresenter }: TopBarProps) {
   return (
-    <header className="relative z-30 grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center gap-4 bg-white/80 px-6 shadow-[0_1px_0_rgb(0_0_0/0.06)] backdrop-blur-xl">
-      <div className="flex min-w-0 items-center gap-3">
-        <img src="/favicon.svg" alt="" className="size-8" />
-        <div className="min-w-0 leading-none">
-          <p className="title-1 font-semibold tracking-tight">{config.personaName}</p>
-        </div>
-        <span className="caption-2 hidden truncate text-ink-3 xl:block">Remembers every scammer she talks to</span>
+    <header className="relative z-30 flex h-14 shrink-0 items-stretch justify-between border-b border-hair bg-stage px-6">
+      <div className="flex items-stretch gap-8">
+        <span className="flex items-center title-2 font-semibold tracking-tight lowercase">{config.personaName}</span>
+        <nav aria-label="View" className="flex items-stretch gap-6">
+          <Tab active={view === 'call'} onClick={() => onView('call')}>
+            Call
+          </Tab>
+          <Tab active={view === 'network'} onClick={() => onView('network')} hint="G">
+            Network
+          </Tab>
+        </nav>
       </div>
 
-      <Segmented view={view} onView={onView} />
-
-      <div className="flex items-center justify-end gap-2">
-        <HealthDot />
-        <MemorySwitch />
-        <IconButton label="Presenter script (P)" onClick={onOpenPresenter}>
-          <Presentation size={20} />
-        </IconButton>
+      <div className="flex items-center gap-4">
+        <Status />
+        <span aria-hidden className="h-4 w-px bg-hair" />
+        <button
+          type="button"
+          onClick={onOpenPresenter}
+          title="Presenter script (P)"
+          className="rounded-md px-2 py-1 body-5 text-ink-2 transition-colors hover:text-ink"
+        >
+          Script
+        </button>
         <DemoMenu />
       </div>
     </header>
   )
 }
 
-function Segmented({ view, onView }: { view: View; onView: (v: View) => void }) {
-  const items: { id: View; label: string; icon: ReactNode; key: string }[] = [
-    { id: 'call', label: 'Call', icon: <Phone size={16} weight="bold" />, key: '' },
-    { id: 'network', label: 'Network', icon: <Graph size={16} weight="bold" />, key: 'G' },
-  ]
-  return (
-    <div role="tablist" aria-label="View" className="flex rounded-full bg-fill-2 p-1">
-      {items.map((it) => {
-        const active = view === it.id
-        return (
-          <button
-            key={it.id}
-            role="tab"
-            aria-selected={active}
-            type="button"
-            onClick={() => onView(it.id)}
-            className={`relative flex items-center gap-2 rounded-full px-4 py-2 button-sm transition-colors ${
-              active ? 'text-ink' : 'text-ink-2 hover:text-ink'
-            }`}
-          >
-            {active && (
-              <motion.span
-                layoutId="segmented-pill"
-                className="absolute inset-0 rounded-full bg-white shadow-soft"
-                transition={{ type: 'spring', stiffness: 500, damping: 40 }}
-              />
-            )}
-            <span className="relative flex items-center gap-2">
-              {it.icon}
-              {it.label}
-            </span>
-          </button>
-        )
-      })}
-    </div>
-  )
-}
-
-export function MemorySwitch() {
-  const { state, actions } = useStore()
-  const on = state.memoryEnabled
+function Tab({
+  active,
+  onClick,
+  hint,
+  children,
+}: {
+  active: boolean
+  onClick: () => void
+  hint?: string
+  children: string
+}) {
   return (
     <button
       type="button"
-      role="switch"
-      aria-checked={on}
-      onClick={actions.toggleMemory}
-      title="Toggle memory (M)"
-      className={`flex items-center gap-3 rounded-full py-1 pr-1 pl-4 transition-[background-color] duration-500 active:scale-[0.98] ${
-        on ? 'bg-mem-soft' : 'bg-fill-2'
+      role="tab"
+      aria-selected={active}
+      onClick={onClick}
+      className={`group relative flex items-center gap-2 body-5 transition-colors ${
+        active ? 'text-ink' : 'text-ink-2 hover:text-ink'
       }`}
     >
-      <span className={`button-sm whitespace-nowrap transition-colors duration-500 ${on ? 'text-[#1f8a3b]' : 'text-ink-2'}`}>
-        Memory {on ? 'on' : 'off'}
-      </span>
-      <span
-        className={`relative flex h-8 w-12 items-center rounded-full p-0.5 transition-[background-color] duration-500 ${
-          on ? 'justify-end bg-mem' : 'justify-start bg-[#d1d1d6]'
-        }`}
-      >
+      {children}
+      {hint && (
+        <kbd className="caption-5 rounded border border-hair px-1 font-mono text-ink-3 opacity-0 transition-opacity group-hover:opacity-100">
+          {hint}
+        </kbd>
+      )}
+      {active && (
         <motion.span
-          layout
-          transition={{ type: 'spring', stiffness: 600, damping: 36 }}
-          className="size-7 rounded-full bg-white shadow-[0_2px_6px_rgb(0_0_0/0.2)]"
+          layoutId="tab-underline"
+          className="absolute right-0 -bottom-px left-0 h-0.5 bg-ink"
+          transition={{ type: 'spring', stiffness: 500, damping: 40 }}
         />
-      </span>
+      )}
     </button>
   )
 }
 
-function HealthDot() {
-  const { state } = useStore()
+/** "● live · memory on" in mono. The memory part is the toggle (also M). */
+function Status() {
+  const { state, actions } = useStore()
   const h = state.health
   const ok = h?.status === 'ok'
   const offline = h && h.hindsight === 'down' && h.llm === 'down' && h.db === 'down'
-  const text = !h ? 'Checking' : ok ? 'All systems ok' : offline ? 'Backend offline' : 'Degraded'
+  const label = !h ? 'checking' : ok ? 'live' : offline ? 'offline' : 'degraded'
+  const dot = !h ? 'bg-ink-3' : ok ? 'bg-mem' : 'bg-warn'
+  const on = state.memoryEnabled
   const title = h ? `Memory ${h.hindsight}, model ${h.llm}, database ${h.db}` : 'Checking services'
-  return (
-    <div className="flex items-center gap-2 px-2" title={title}>
-      <span className="relative flex size-2">
-        {ok && <span className="absolute inset-0 animate-ping rounded-full bg-mem opacity-50" />}
-        <span className={`relative size-2 rounded-full ${!h ? 'bg-ink-3' : ok ? 'bg-mem' : 'bg-warn'}`} />
-      </span>
-      <span className="caption-1 hidden whitespace-nowrap text-ink-2 2xl:inline">{text}</span>
-    </div>
-  )
-}
 
-export function IconButton({
-  label,
-  onClick,
-  children,
-  active = false,
-}: {
-  label: string
-  onClick: () => void
-  children: ReactNode
-  active?: boolean
-}) {
   return (
-    <motion.button
-      type="button"
-      onClick={onClick}
-      title={label}
-      aria-label={label}
-      whileTap={{ scale: 0.94 }}
-      transition={{ duration: 0.2, ease: EASE }}
-      className={`grid size-10 place-items-center rounded-full transition-colors ${
-        active ? 'bg-fill text-ink' : 'text-ink-2 hover:bg-fill-2 hover:text-ink'
-      }`}
-    >
-      {children}
-    </motion.button>
+    <div className="flex items-center gap-2 font-mono caption-4 text-ink-2">
+      <span className="flex items-center gap-2" title={title}>
+        <span className="relative flex size-2">
+          {ok && <span className="absolute inset-0 animate-ping rounded-full bg-mem opacity-40" />}
+          <span className={`relative size-2 rounded-full ${dot}`} />
+        </span>
+        {label}
+      </span>
+      <span className="text-ink-3">·</span>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={on}
+        onClick={actions.toggleMemory}
+        title="Toggle memory (M)"
+        className="flex items-center gap-2 rounded-md px-1 py-0.5 transition-colors hover:bg-fill-2"
+      >
+        <span className={on ? 'text-ink' : 'text-ink-2'}>memory {on ? 'on' : 'off'}</span>
+        <span
+          className={`flex h-4 w-7 items-center rounded-full p-0.5 transition-colors duration-300 ${
+            on ? 'justify-end bg-mem' : 'justify-start bg-[#d1d1d6]'
+          }`}
+        >
+          <motion.span
+            layout
+            transition={{ type: 'spring', stiffness: 600, damping: 36 }}
+            className="size-3 rounded-full bg-white shadow-[0_1px_2px_rgb(0_0_0/0.2)]"
+          />
+        </span>
+      </button>
+    </div>
   )
 }

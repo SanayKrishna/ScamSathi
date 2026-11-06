@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowCounterClockwise, Database, DotsThree } from '@phosphor-icons/react'
+import { ArrowCounterClockwise, CaretDown, Database } from '@phosphor-icons/react'
 import { useEffect, useRef, useState } from 'react'
 import { api, ApiClientError } from '../api'
 import { EASE } from '../lib/motion'
@@ -88,21 +88,21 @@ export function DemoMenu() {
 
   return (
     <div ref={rootRef} className="relative">
-      <motion.button
+      <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="dialog"
         aria-label="Demo controls"
         title="Demo controls"
-        whileTap={{ scale: 0.94 }}
-        className={`relative grid size-10 place-items-center rounded-full transition-colors ${
-          open ? 'bg-fill text-ink' : 'text-ink-2 hover:bg-fill-2 hover:text-ink'
+        className={`relative flex items-center gap-1 rounded-md px-2 py-1 body-5 transition-colors ${
+          open ? 'bg-fill-2 text-ink' : 'text-ink-2 hover:text-ink'
         }`}
       >
-        <DotsThree size={22} weight="bold" />
-        {seeding && <span className="absolute top-2 right-2 size-2 animate-pulse rounded-full bg-mem" />}
-      </motion.button>
+        Demo
+        <CaretDown size={12} weight="bold" className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        {seeding && <span className="absolute -top-0.5 -right-0.5 size-2 animate-pulse rounded-full bg-mem" />}
+      </button>
 
       <AnimatePresence>
         {open && (
@@ -113,7 +113,7 @@ export function DemoMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.97 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="absolute top-full right-0 z-50 mt-2 w-96 origin-top-right rounded-3xl bg-white/90 p-3 shadow-lift backdrop-blur-2xl"
+            className="absolute top-full right-0 z-50 mt-3 w-96 origin-top-right rounded-3xl bg-white/90 p-3 shadow-lift backdrop-blur-2xl"
           >
             <p className="caption-3 px-3 pt-2 pb-3 uppercase tracking-wider text-ink-3">Demo controls</p>
 
