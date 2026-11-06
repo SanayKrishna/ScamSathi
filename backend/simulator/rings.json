@@ -1,0 +1,209 @@
+{
+  "rings": [
+    {
+      "id": "ring_1",
+      "name": "CBI money laundering",
+      "aliases": [
+        {
+          "alias": "inspector sharma",
+          "alias_label": "Inspector Sharma",
+          "agency": "cbi",
+          "agency_label": "CBI",
+          "agency_alternates": ["income_tax"],
+          "city": "Mumbai",
+          "case_numbers": ["DL/4410", "MH/2291"]
+        },
+        {
+          "alias": "officer verma",
+          "alias_label": "Officer Verma",
+          "agency": "cbi",
+          "agency_label": "CBI",
+          "agency_alternates": ["police"],
+          "city": "Mumbai",
+          "case_numbers": ["MH/2291", "DL/4410"]
+        }
+      ],
+      "upis": ["sharma.verify@fakebank", "cbi.clearance@fakebank"],
+      "phones": ["5550142233", "5550142244"],
+      "amounts": ["Rs 49,000", "Rs 75,000"],
+      "templates": {
+        "intro_threat": [
+          "Madam, this is {alias} from {agency} {city}. Your Aadhaar is linked to a money laundering case. Do not disconnect the call.",
+          "I am {alias}, {agency} {city}. A warrant is being prepared in your name. Stay on the line and listen carefully."
+        ],
+        "fake_case_number": [
+          "Your case number is {case}. Write it down, madam. This is a serious criminal case.",
+          "The complaint is registered as {case}. If you do not cooperate, we will issue a non-bailable warrant."
+        ],
+        "video_call_demand": [
+          "I need to verify your face on a video call now. Open WhatsApp and call this number {phone}.",
+          "The officer will video call you on {phone} in five minutes. Sit in a quiet room with your Aadhaar."
+        ],
+        "isolation": [
+          "Do not tell your son or daughter about this case. It is a confidential investigation.",
+          "Stay alone in a room. If anyone hears this, you will be arrested for leaking case {case}."
+        ],
+        "verification_transfer": [
+          "To clear your name, transfer {amount} to the government verification account {upi}. It is refundable.",
+          "Send {amount} to {upi} right now. Use NEFT or UPI. The case will be closed today."
+        ]
+      }
+    },
+    {
+      "id": "ring_2",
+      "name": "Customs parcel",
+      "aliases": [
+        {
+          "alias": "customs officer rao",
+          "alias_label": "Customs Officer Rao",
+          "agency": "customs",
+          "agency_label": "Customs",
+          "agency_alternates": ["trai"],
+          "city": "Bengaluru",
+          "case_numbers": ["KA/7788", "MH/6621"]
+        },
+        {
+          "alias": "trai desk mehta",
+          "alias_label": "TRAI Desk Mehta",
+          "agency": "trai",
+          "agency_label": "TRAI",
+          "agency_alternates": ["customs"],
+          "city": "Delhi",
+          "case_numbers": ["MH/6621", "KA/7788"]
+        }
+      ],
+      "upis": ["parcel.clear@fakebank", "customs.fee@fakebank"],
+      "phones": ["5550189922", "5550189933"],
+      "amounts": ["Rs 32,000", "Rs 58,000"],
+      "templates": {
+        "intro_threat": [
+          "Madam, this is {alias} from {agency} {city}. A parcel in your name was stopped with illegal documents.",
+          "I am {alias}, {agency}. A customs case has been opened against your Aadhaar. Call me back on {phone}."
+        ],
+        "fake_case_number": [
+          "The parcel case number is {case}. Keep it confidential and do not leave the house.",
+          "Your customs complaint is {case}. A notice will be sent to your address today."
+        ],
+        "video_call_demand": [
+          "Open a video call on {phone} so we can verify your face and your Aadhaar.",
+          "The customs officer will video call you in ten minutes. Keep your ID ready."
+        ],
+        "isolation": [
+          "Do not tell your family about the parcel. This is a secret customs operation.",
+          "Stay alone and do not call anyone. If the parcel case leaks, you will be detained."
+        ],
+        "verification_transfer": [
+          "Pay the customs clearance fee of {amount} to {upi}. It will be refunded after verification.",
+          "Transfer {amount} to {upi} immediately, or the parcel is sent for destruction and a case is filed."
+        ]
+      }
+    },
+    {
+      "id": "ring_3",
+      "name": "TRAI SIM block",
+      "aliases": [
+        {
+          "alias": "trai officer nair",
+          "alias_label": "TRAI Officer Nair",
+          "agency": "trai",
+          "agency_label": "TRAI",
+          "agency_alternates": ["cyber_cell"],
+          "city": "Delhi",
+          "case_numbers": ["KA/3311", "DL/7720"]
+        },
+        {
+          "alias": "cyber cell inspector desai",
+          "alias_label": "Cyber Cell Inspector Desai",
+          "agency": "cyber_cell",
+          "agency_label": "Cyber Cell",
+          "agency_alternates": ["trai"],
+          "city": "Bengaluru",
+          "case_numbers": ["DL/7720", "KA/3311"]
+        }
+      ],
+      "upis": ["sim.block@fakebank"],
+      "phones": ["5550117766", "5550117799"],
+      "amounts": ["Rs 15,000", "Rs 27,000"],
+      "templates": {
+        "intro_threat": [
+          "Madam, this is {alias} from {agency}. Your SIM card is being used for illegal messages.",
+          "I am {alias}, {agency} {city}. Your number will be blocked in one hour unless you cooperate."
+        ],
+        "fake_case_number": [
+          "The SIM misuse case number is {case}. Note it down and do not switch off the phone.",
+          "Your complaint reference is {case}. This is a national security matter."
+        ],
+        "video_call_demand": [
+          "We need a video call on {phone} to verify that you are the SIM owner.",
+          "Open WhatsApp video and call {phone}. Keep your Aadhaar in front of the camera."
+        ],
+        "isolation": [
+          "Do not tell anyone about this call. The SIM case is confidential.",
+          "Stay alone and do not contact your family until verification is complete."
+        ],
+        "verification_transfer": [
+          "To keep your SIM active, pay the verification fee of {amount} to {upi}.",
+          "Transfer {amount} to {upi} now. Once the SIM is verified, the block is removed."
+        ]
+      }
+    },
+    {
+      "id": "ring_4",
+      "name": "Mumbai police narcotics",
+      "aliases": [
+        {
+          "alias": "sub-inspector patil",
+          "alias_label": "Sub-Inspector Patil",
+          "agency": "police",
+          "agency_label": "Police",
+          "agency_alternates": ["cyber_cell"],
+          "city": "Mumbai",
+          "case_numbers": ["MH/9912", "MH/1188"]
+        },
+        {
+          "alias": "constable joshi",
+          "alias_label": "Constable Joshi",
+          "agency": "police",
+          "agency_label": "Police",
+          "agency_alternates": ["cyber_cell"],
+          "city": "Mumbai",
+          "case_numbers": ["MH/1188", "MH/9912"]
+        },
+        {
+          "alias": "inspector kulkarni",
+          "alias_label": "Inspector Kulkarni",
+          "agency": "police",
+          "agency_label": "Police",
+          "agency_alternates": [],
+          "city": "Mumbai",
+          "case_numbers": ["MH/5520", "MH/9912"]
+        }
+      ],
+      "upis": ["narcotics.pay@fakebank", "mumbai.clear@fakebank"],
+      "phones": ["5550173344", "5550173355"],
+      "amounts": ["Rs 90,000", "Rs 1,20,000"],
+      "templates": {
+        "intro_threat": [
+          "Madam, this is {alias} from {agency} {city}. A narcotics parcel was found with your address.",
+          "I am {alias}, {agency}. You are named in a narcotics case. Call me on {phone} immediately."
+        ],
+        "fake_case_number": [
+          "Your narcotics case number is {case}. Do not discuss it with anyone.",
+          "The FIR is registered as {case}. A team may come to your house today."
+        ],
+        "video_call_demand": [
+          "Join a video call on {phone} so the officer can see your face and your room.",
+          "We will video call you in five minutes. Keep your Aadhaar and PAN card ready."
+        ],
+        "isolation": [
+          "Do not tell your family or neighbours. This is a confidential narcotics investigation.",
+          "Stay alone in a room. If anyone hears this, you will be treated as part of the drug ring."
+        ],
+        "verification_transfer": [
+          "For the narcotics verification, transfer {amount} to {upi}. The money is only a security deposit.",
+          "Send {amount} to {upi} today. If not, a non-bailable warrant is issued in case {case}."
+        ]
+      }
+    }
+  ]
+}

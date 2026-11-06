@@ -17,7 +17,7 @@ Memory is the product. Without it, Ajji is a generic stalling chatbot. With it, 
 | Frontend | React, Vite, Tailwind, react-force-graph-2d |Chat, memory panel, contradiction alerts, network graph, memory toggle, stats |
 | Backend | Python, FastAPI |Orchestrates each turn, talks to every service below |
 | Hindsight | Hindsight Cloud (or self-hosted Docker) |Long-term memory: `retain`, `recall`, `reflect` |
-| LLM | Groq: `openai/gpt-oss-120b`, fallback `qwen/qwen3-32b` |IOC extraction (strict JSON) and Ajji's replies |
+| LLM | Groq: `openai/gpt-oss-120b`, fallback `qwen/qwen3.8-27b` |IOC extraction (strict JSON) and Ajji's replies |
 | SQLite | stdlib `sqlite3` or SQLModel |Exact IOC values and graph edges for `/network` and `/stats` |
 | Scammer simulator | Python script + `rings.json` |Plays the scammer side; pre-seeds ~20 conversations |
 
