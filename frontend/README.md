@@ -32,7 +32,7 @@ On mocks, put `/degraded` anywhere in a scammer message to preview the degraded 
 
 | Endpoint | Where the UI uses it | Check |
 |---|---|---|
-| `GET /health` | Header dot, polled every 15 s | Green when all ok, amber "Degraded" when one is down |
+| `GET /health` | Dot in the top bar, polled every 15 s | Green when all ok, amber "Degraded" when one is down |
 | `GET /stats` | Stat strip under the stage | All four numbers render; "est." shows next to minutes |
 | `POST /conversations` | New chat / Answer on the incoming call | `opening_line` appears as the first bubble |
 | `POST /conversations/{id}/message` | Composer inside the phone | Reply appears; She remembers and Caught fill when memory is on and stay quiet when it is off; Identifiers heard fills either way |
