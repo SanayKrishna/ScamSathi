@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Chat } from './components/Chat'
-import { ContradictionPanel } from './components/ContradictionPanel'
-import { MemoryPanel } from './components/MemoryPanel'
-import { NetworkGraph } from './components/NetworkGraph'
+import { Phone } from './components/Phone'
 import { PresenterDrawer } from './components/PresenterDrawer'
+import { StatStrip } from './components/StatStrip'
 import { Toasts } from './components/Toasts'
 import { TopBar, type View } from './components/TopBar'
 import { StoreProvider, useStore } from './store'
@@ -28,12 +26,18 @@ function Shell() {
   return (
     <div className="flex h-screen min-h-[720px] flex-col overflow-hidden">
       <TopBar view={view} onView={setView} onOpenPresenter={() => setPresenter(true)} />
-      <main className="grid min-h-0 flex-1 grid-cols-[55fr_45fr] gap-4 px-4 pb-4">
-        <Chat />
-        <div className="grid min-h-0 grid-rows-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,1.1fr)] gap-4 [@media(max-height:860px)]:grid-rows-[minmax(0,1fr)_minmax(0,0.95fr)_minmax(0,1.25fr)]">
-          <MemoryPanel />
-          <ContradictionPanel />
-          <NetworkGraph />
+      <main className="relative flex min-h-0 flex-1 flex-col">
+        {view === 'call' ? (
+          <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-12 px-10 pt-6">
+            <div className="min-h-0" />
+            <Phone />
+            <div className="min-h-0" />
+          </div>
+        ) : (
+          <div className="min-h-0 flex-1" />
+        )}
+        <div className="flex shrink-0 justify-center py-4">
+          <StatStrip />
         </div>
       </main>
       <Toasts />
