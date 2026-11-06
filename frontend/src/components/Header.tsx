@@ -120,7 +120,15 @@ function HealthDot() {
         {ok && <span className="absolute inset-0 animate-ping rounded-full bg-mem opacity-60" />}
         <span className={`relative size-2 rounded-full ${!h ? 'bg-ink-3' : ok ? 'bg-mem' : 'bg-warn'}`} />
       </span>
-      <span className="caption-1 text-ink-2">{!h ? 'Checking' : ok ? 'All systems ok' : 'Degraded'}</span>
+      <span className="caption-1 text-ink-2">
+        {!h
+          ? 'Checking'
+          : ok
+            ? 'All systems ok'
+            : h.hindsight === 'down' && h.llm === 'down' && h.db === 'down'
+              ? 'Backend offline'
+              : 'Degraded'}
+      </span>
     </div>
   )
 }

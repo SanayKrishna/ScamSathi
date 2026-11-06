@@ -4,6 +4,7 @@ import { ContradictionPanel } from './components/ContradictionPanel'
 import { MemoryPanel } from './components/MemoryPanel'
 import { NetworkGraph } from './components/NetworkGraph'
 import { StoreProvider } from './store'
+import { Toasts } from './components/Toasts'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <NetworkGraph />
           </div>
         </main>
+        <Toasts />
       </div>
     </StoreProvider>
   )
