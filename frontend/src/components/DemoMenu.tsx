@@ -1,0 +1,192 @@
+import { AnimatePresence, motion } from 'motion/react'
+import { ArrowCounterClockwise, Database, SlidersHorizontal } from '@phosphor-icons/react'
+import { useEffect, useRef, useState } from 'react'
+import { api, ApiClientError } from '../api'
+import { EASE } from '../lib/motion'
+import { useStore } from '../store'
+import type { SeedStatusResponse } from '../types'
+
+export function DemoMenu() {
+  const { actions } = useStore()
+  const [open, setOpen] = useState(false)
+  const [seed, setSeed] = useState<SeedStatusResponse | null>(null)
+  const [confirmText, setConfirmText] = useState('')
+  const [resetting, setResetting] = useState(false)
+  const [note, setNote] = useState<string | null>(null)
+  const rootRef = useRef<HTMLDivElement>(null)
+  const pollRef = useRef<number | null>(null)
+
+  // Close on outside click or Escape.
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e: MouseEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    document.addEventListener('mousedown', onDown)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('mousedown', onDown)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  useEffect(() => () => {
+    if (pollRef.current) window.clearTimeout(pollRef.current)
+  }, [])
+
+  const seeding = seed?.status === 'running'
+
+  const poll = (jobId: string) => {
+    pollRef.current = window.setTimeout(async () => {
+      try {
+        const s = await api.getSeedStatus(jobId)
+        setSeed(s)
+        if (s.status === 'running') poll(jobId)
+        else {
+          setNote(s.status === 'done' ? `Seeded ${s.conversations_done} conversations.` : `Seed failed. ${s.error ?? ''}`)
+          void actions.refresh()
+        }
+      } catch (e) {
+        setSeed(null)
+        setNote(e instanceof ApiClientError ? e.message : 'Lost track of the seed job.')
+      }
+    }, 1500)
+  }
+
+  const startSeed = async () => {
+    setNote(null)
+    try {
+      const res = await api.startSeed()
+      setSeed({ ...res, conversations_done: 0, error: null })
+      poll(res.job_id)
+    } catch (e) {
+      setNote(e instanceof ApiClientError ? e.message : 'Could not start the seed.')
+    }
+  }
+
+  const reset = async () => {
+    if (confirmText !== 'RESET') return
+    setResetting(true)
+    setNote(null)
+    try {
+      const res = await api.resetDemo()
+      setNote(`Memory bank ${res.bank_id} was wiped and recreated.`)
+      setConfirmText('')
+      void actions.refresh()
+    } catch (e) {
+      setNote(e instanceof ApiClientError ? e.message : 'Reset failed.')
+    } finally {
+      setResetting(false)
+    }
+  }
+
+  const pct = seed ? Math.round((seed.conversations_done / Math.max(1, seed.conversations_planned)) * 100) : 0
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+        className="relative grid size-14 place-items-center rounded-full border border-line/60 text-ink-2 transition-[background-color,color] hover:bg-panel hover:text-ink active:scale-[0.98]"
+        title="Demo controls"
+      >
+        <SlidersHorizontal size={22} />
+        {seeding && <span className="absolute top-2 right-2 size-2 animate-pulse rounded-full bg-mem" />}
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            role="dialog"
+            aria-label="Demo controls"
+            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -4, scale: 0.98 }}
+            transition={{ duration: 0.3, ease: EASE }}
+            className="absolute top-full right-0 z-50 mt-2 w-96 origin-top-right rounded-3xl border border-line bg-panel/95 p-3 shadow-2xl shadow-black backdrop-blur-xl"
+          >
+            <p className="caption-3 px-3 pt-2 pb-3 uppercase tracking-wider text-ink-3">Demo controls</p>
+
+            <div className="rounded-xl bg-card p-4">
+              <div className="flex items-start gap-3">
+                <Database size={20} className="mt-0.5 text-ink-2" />
+                <div className="flex-1">
+                  <p className="title-3">Seed past conversations</p>
+                  <p className="body-6 text-ink-3">Runs about 20 simulated scam chats so memory has history.</p>
+                </div>
+              </div>
+              {seed && (
+                <div className="mt-3">
+                  <div className="h-2 overflow-hidden rounded-full bg-raised">
+                    <motion.div
+                      className="h-full origin-left rounded-full bg-mem"
+                      initial={{ scaleX: 0 }}
+                      animate={{ scaleX: pct / 100 }}
+                      transition={{ duration: 0.5, ease: EASE }}
+                    />
+                  </div>
+                  <p className="caption-5 mt-2 text-ink-3 tabular-nums">
+                    {seed.conversations_done} of {seed.conversations_planned} · {seed.status}
+                  </p>
+                </div>
+              )}
+              <button
+                type="button"
+                onClick={startSeed}
+                disabled={seeding}
+                className="mt-3 w-full rounded-full bg-ink px-3 py-2 button-sm text-bg transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] disabled:opacity-40"
+              >
+                {seeding ? 'Seeding...' : 'Start seed'}
+              </button>
+            </div>
+
+            <div className="mt-2 rounded-xl bg-card p-4">
+              <div className="flex items-start gap-3">
+                <ArrowCounterClockwise size={20} className="mt-0.5 text-alert" />
+                <div className="flex-1">
+                  <p className="title-3">Reset everything</p>
+                  <p className="body-6 text-ink-3">Wipes the database and the memory bank. Type RESET to confirm.</p>
+                </div>
+              </div>
+              <div className="mt-3 flex gap-2">
+                <input
+                  value={confirmText}
+                  onChange={(e) => setConfirmText(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && void reset()}
+                  placeholder="RESET"
+                  aria-label="Type RESET to confirm"
+                  className="min-w-0 flex-1 rounded-full border border-line bg-bg px-3 py-2 body-6 font-mono text-ink outline-none placeholder:text-ink-3/50 focus:border-alert/60"
+                />
+                <button
+                  type="button"
+                  onClick={reset}
+                  disabled={confirmText !== 'RESET' || resetting}
+                  className="rounded-full bg-alert px-3 py-2 button-sm text-bg transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] disabled:opacity-30"
+                >
+                  {resetting ? 'Resetting...' : 'Reset'}
+                </button>
+              </div>
+            </div>
+
+            <AnimatePresence>
+              {note && (
+                <motion.p
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease: EASE }}
+                  className="caption-2 px-3 pt-3 pb-1 text-ink-2"
+                >
+                  {note}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
