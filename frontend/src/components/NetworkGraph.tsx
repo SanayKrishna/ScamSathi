@@ -7,7 +7,7 @@ import { shortDate } from '../lib/format'
 import { EASE } from '../lib/motion'
 import { useStore } from '../store'
 import type { EdgeRelation, NetworkNode, NodeType } from '../types'
-import { EmptyState } from './MemoryPanel'
+import { Quiet as EmptyState } from './RememberColumn'
 import { Panel } from './Panel'
 
 // ── Visual constants ────────────────────────────────────────────

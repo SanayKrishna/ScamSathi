@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { CaughtColumn } from './components/CaughtColumn'
 import { Phone } from './components/Phone'
+import { RememberColumn } from './components/RememberColumn'
 import { PresenterDrawer } from './components/PresenterDrawer'
 import { StatStrip } from './components/StatStrip'
 import { Toasts } from './components/Toasts'
@@ -29,9 +31,9 @@ function Shell() {
       <main className="relative flex min-h-0 flex-1 flex-col">
         {view === 'call' ? (
           <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] gap-12 px-10 pt-6">
-            <div className="min-h-0" />
+            <RememberColumn />
             <Phone />
-            <div className="min-h-0" />
+            <CaughtColumn />
           </div>
         ) : (
           <div className="min-h-0 flex-1" />
