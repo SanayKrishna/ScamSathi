@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { CaughtColumn } from './components/CaughtColumn'
+import { NetworkView } from './components/NetworkView'
 import { Phone } from './components/Phone'
 import { RememberColumn } from './components/RememberColumn'
 import { PresenterDrawer } from './components/PresenterDrawer'
@@ -36,7 +37,7 @@ function Shell() {
             <CaughtColumn />
           </div>
         ) : (
-          <div className="min-h-0 flex-1" />
+          <NetworkView />
         )}
         <div className="flex shrink-0 justify-center py-4">
           <StatStrip />
