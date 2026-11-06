@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="960" height="560" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Ajji system overview</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5F5E5A"/>
+    </marker>
+  </defs>
+  <rect width="960" height="560" fill="#FFFFFF"/>
+
+  <!-- Frontend -->
+  <rect x="30" y="40" width="250" height="300" rx="10" fill="#E6F1FB" stroke="#185FA5"/>
+  <text x="155" y="68" text-anchor="middle" font-size="16" font-weight="600" fill="#0C447C">Frontend (React + Vite)</text>
+  <g font-size="13" fill="#0C447C">
+    <rect x="50" y="104" width="210" height="36" rx="6" fill="#FFFFFF" stroke="#85B7EB"/><text x="155" y="127" text-anchor="middle">Chat (scammer vs Ajji)</text>
+    <rect x="50" y="148" width="210" height="36" rx="6" fill="#FFFFFF" stroke="#85B7EB"/><text x="155" y="171" text-anchor="middle">What Ajji remembers</text>
+    <rect x="50" y="192" width="210" height="36" rx="6" fill="#FFFFFF" stroke="#85B7EB"/><text x="155" y="215" text-anchor="middle">Contradiction alerts</text>
+    <rect x="50" y="236" width="210" height="36" rx="6" fill="#FFFFFF" stroke="#85B7EB"/><text x="155" y="259" text-anchor="middle">Scam network graph</text>
+    <rect x="50" y="280" width="210" height="36" rx="6" fill="#FFFFFF" stroke="#85B7EB"/><text x="155" y="303" text-anchor="middle">Memory toggle + stats</text>
+  </g>
+
+  <!-- Backend -->
+  <rect x="355" y="40" width="270" height="420" rx="10" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="490" y="68" text-anchor="middle" font-size="16" font-weight="600" fill="#26215C">Backend (FastAPI)</text>
+  <g font-size="13" fill="#26215C">
+    <rect x="375" y="104" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="127" text-anchor="middle">Conversation API</text>
+    <rect x="375" y="148" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="171" text-anchor="middle">Agent orchestrator</text>
+    <rect x="375" y="192" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="215" text-anchor="middle">IOC extractor (LLM + regex)</text>
+    <rect x="375" y="236" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="259" text-anchor="middle">Contradiction checker</text>
+    <rect x="375" y="280" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="303" text-anchor="middle">Persona (Ajji) responder</text>
+    <rect x="375" y="324" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="347" text-anchor="middle">Network builder</text>
+    <rect x="375" y="368" width="230" height="36" rx="6" fill="#FFFFFF" stroke="#AFA9EC"/><text x="490" y="391" text-anchor="middle">Demo routes (seed / reset)</text>
+  </g>
+  <text x="490" y="436" text-anchor="middle" font-size="12" fill="#534AB7">memory_enabled flag gates recall</text>
+
+  <!-- External services -->
+  <rect x="700" y="40" width="230" height="110" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+  <text x="815" y="72" text-anchor="middle" font-size="16" font-weight="600" fill="#04342C">Hindsight</text>
+  <text x="815" y="94" text-anchor="middle" font-size="13" fill="#085041">bank: scam-intel</text>
+  <text x="815" y="114" text-anchor="middle" font-size="12" fill="#0F6E56">retain · recall · reflect</text>
+  <text x="815" y="134" text-anchor="middle" font-size="12" fill="#0F6E56">the agent's long-term memory</text>
+
+  <rect x="700" y="180" width="230" height="90" rx="10" fill="#FAEEDA" stroke="#854F0B"/>
+  <text x="815" y="212" text-anchor="middle" font-size="16" font-weight="600" fill="#412402">Groq LLM</text>
+  <text x="815" y="234" text-anchor="middle" font-size="12" fill="#633806">openai/gpt-oss-120b</text>
+  <text x="815" y="252" text-anchor="middle" font-size="12" fill="#633806">fallback: qwen/qwen3.8-27b</text>
+
+  <rect x="700" y="300" width="230" height="90" rx="10" fill="#F1EFE8" stroke="#5F5E5A"/>
+  <text x="815" y="332" text-anchor="middle" font-size="16" font-weight="600" fill="#2C2C2A">SQLite</text>
+  <text x="815" y="354" text-anchor="middle" font-size="12" fill="#444441">conversations, messages,</text>
+  <text x="815" y="372" text-anchor="middle" font-size="12" fill="#444441">IOCs, graph edges</text>
+
+  <!-- Simulator -->
+  <rect x="30" y="400" width="250" height="110" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-dasharray="6 4"/>
+  <text x="155" y="430" text-anchor="middle" font-size="16" font-weight="600" fill="#4A1B0C">Scammer simulator</text>
+  <text x="155" y="452" text-anchor="middle" font-size="12" fill="#712B13">4 fictional rings, ~10 aliases</text>
+  <text x="155" y="470" text-anchor="middle" font-size="12" fill="#712B13">pre-seeds ~20 conversations</text>
+  <text x="155" y="490" text-anchor="middle" font-size="12" fill="#712B13">fake identifiers only</text>
+
+  <!-- Arrows -->
+  <line x1="280" y1="160" x2="352" y2="160" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/>
+  <text x="316" y="150" text-anchor="middle" font-size="11" fill="#5F5E5A">REST</text>
+  <line x1="280" y1="455" x2="352" y2="420" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)"/>
+  <text x="300" y="430" text-anchor="middle" font-size="11" fill="#5F5E5A">REST</text>
+
+  <line x1="625" y1="110" x2="697" y2="95" stroke="#0F6E56" stroke-width="2" marker-end="url(#a)" marker-start="url(#a)"/>
+  <line x1="625" y1="215" x2="697" y2="225" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/>
+  <line x1="625" y1="340" x2="697" y2="345" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)" marker-start="url(#a)"/>
+
+  <text x="480" y="530" text-anchor="middle" font-size="12" fill="#5F5E5A">Hindsight holds what Ajji remembers (unstructured, searchable). SQLite holds exact IOCs for the graph and stats.</text>
+</svg>

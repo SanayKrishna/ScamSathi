@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="960" height="500" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <title>What Ajji remembers and where</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5F5E5A"/>
+    </marker>
+  </defs>
+  <rect width="960" height="500" fill="#FFFFFF"/>
+
+  <!-- Inputs -->
+  <text x="140" y="40" text-anchor="middle" font-size="15" font-weight="600" fill="#2C2C2A">What gets written</text>
+  <rect x="30" y="60" width="220" height="100" rx="8" fill="#FAECE7" stroke="#993C1D"/>
+  <text x="140" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#4A1B0C">Every scammer message</text>
+  <text x="140" y="110" text-anchor="middle" font-size="12" fill="#712B13">raw text + conversation id</text>
+  <text x="140" y="128" text-anchor="middle" font-size="12" fill="#712B13">+ script stage + timestamp</text>
+  <text x="140" y="146" text-anchor="middle" font-size="12" fill="#712B13">(episodic)</text>
+
+  <rect x="30" y="185" width="220" height="100" rx="8" fill="#FAECE7" stroke="#993C1D"/>
+  <text x="140" y="213" text-anchor="middle" font-size="14" font-weight="600" fill="#4A1B0C">Conversation summary</text>
+  <text x="140" y="235" text-anchor="middle" font-size="12" fill="#712B13">aliases, agencies, case nos.,</text>
+  <text x="140" y="253" text-anchor="middle" font-size="12" fill="#712B13">UPI, phones, tactics, stages</text>
+  <text x="140" y="271" text-anchor="middle" font-size="12" fill="#712B13">(written at conversation end)</text>
+
+  <rect x="30" y="310" width="220" height="100" rx="8" fill="#FAECE7" stroke="#993C1D"/>
+  <text x="140" y="338" text-anchor="middle" font-size="14" font-weight="600" fill="#4A1B0C">Extracted IOCs</text>
+  <text x="140" y="360" text-anchor="middle" font-size="12" fill="#712B13">typed values from step 2</text>
+  <text x="140" y="378" text-anchor="middle" font-size="12" fill="#712B13">phone · upi · alias · case_number</text>
+  <text x="140" y="396" text-anchor="middle" font-size="12" fill="#712B13">agency_claimed · script_stage</text>
+
+  <!-- Stores -->
+  <rect x="360" y="60" width="270" height="225" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+  <text x="495" y="90" text-anchor="middle" font-size="16" font-weight="600" fill="#04342C">Hindsight bank: scam-intel</text>
+  <g font-size="12.5" fill="#085041">
+    <text x="380" y="120">• facts extracted from each retain</text>
+    <text x="380" y="142">• entities linked in a knowledge graph</text>
+    <text x="380" y="164">• recall = semantic + keyword +</text>
+    <text x="392" y="182">graph + temporal search</text>
+    <text x="380" y="204">• one shared bank across ALL victims,</text>
+    <text x="392" y="222">so call #9 sees what call #3 learned</text>
+    <text x="380" y="248" font-weight="600">Answers: "have we seen this before?"</text>
+  </g>
+
+  <rect x="360" y="310" width="270" height="100" rx="10" fill="#F1EFE8" stroke="#5F5E5A"/>
+  <text x="495" y="340" text-anchor="middle" font-size="16" font-weight="600" fill="#2C2C2A">SQLite</text>
+  <text x="495" y="362" text-anchor="middle" font-size="12.5" fill="#444441">exact IOC values + edges</text>
+  <text x="495" y="388" text-anchor="middle" font-size="12.5" font-weight="600" fill="#444441">Answers: "draw the network"</text>
+
+  <!-- Consumers -->
+  <text x="820" y="40" text-anchor="middle" font-size="15" font-weight="600" fill="#2C2C2A">What reads it</text>
+  <rect x="720" y="60" width="210" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="825" y="86" text-anchor="middle" font-size="13" font-weight="600" fill="#26215C">Ajji's next reply</text>
+  <text x="825" y="105" text-anchor="middle" font-size="12" fill="#534AB7">context for the persona</text>
+  <rect x="720" y="135" width="210" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="825" y="161" text-anchor="middle" font-size="13" font-weight="600" fill="#26215C">Contradiction checker</text>
+  <text x="825" y="180" text-anchor="middle" font-size="12" fill="#534AB7">claim now vs claim before</text>
+  <rect x="720" y="210" width="210" height="60" rx="8" fill="#EEEDFE" stroke="#534AB7"/>
+  <text x="825" y="236" text-anchor="middle" font-size="13" font-weight="600" fill="#26215C">Memory panel (UI)</text>
+  <text x="825" y="255" text-anchor="middle" font-size="12" fill="#534AB7">shows what was recalled + why</text>
+  <rect x="720" y="320" width="210" height="80" rx="8" fill="#E6F1FB" stroke="#185FA5"/>
+  <text x="825" y="350" text-anchor="middle" font-size="13" font-weight="600" fill="#0C447C">Network graph + stats</text>
+  <text x="825" y="370" text-anchor="middle" font-size="12" fill="#185FA5">GET /network, GET /stats</text>
+
+  <g stroke="#5F5E5A" stroke-width="1.6">
+    <line x1="250" y1="110" x2="357" y2="130" marker-end="url(#a)"/>
+    <line x1="250" y1="235" x2="357" y2="220" marker-end="url(#a)"/>
+    <line x1="250" y1="360" x2="357" y2="360" marker-end="url(#a)"/>
+    <line x1="630" y1="140" x2="717" y2="90" marker-end="url(#a)"/>
+    <line x1="630" y1="170" x2="717" y2="165" marker-end="url(#a)"/>
+    <line x1="630" y1="200" x2="717" y2="240" marker-end="url(#a)"/>
+    <line x1="630" y1="360" x2="717" y2="360" marker-end="url(#a)"/>
+  </g>
+  <text x="480" y="460" text-anchor="middle" font-size="12" fill="#5F5E5A">Hindsight is the memory. SQLite is an index for the graph and stats.</text>
+</svg>

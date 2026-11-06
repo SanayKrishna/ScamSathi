@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" width="960" height="430" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Same opener, memory off vs memory on</title>
+  <rect width="960" height="430" fill="#FFFFFF"/>
+
+  <rect x="30" y="30" width="430" height="370" rx="12" fill="#F1EFE8" stroke="#888780"/>
+  <text x="245" y="62" text-anchor="middle" font-size="17" font-weight="600" fill="#2C2C2A">Memory OFF</text>
+  <text x="245" y="82" text-anchor="middle" font-size="12" fill="#5F5E5A">recall skipped, LLM sees only this chat</text>
+  <rect x="50" y="102" width="330" height="54" rx="8" fill="#FFFFFF" stroke="#B4B2A9"/>
+  <text x="62" y="124" font-size="12.5" fill="#2C2C2A">Scammer: Inspector Sharma, CBI. Your</text>
+  <text x="62" y="142" font-size="12.5" fill="#2C2C2A">case number is DL/4410.</text>
+  <rect x="110" y="168" width="330" height="54" rx="8" fill="#E6F1FB" stroke="#85B7EB"/>
+  <text x="122" y="190" font-size="12.5" fill="#0C447C">Ajji: Oh no sir, what have I done?</text>
+  <text x="122" y="208" font-size="12.5" fill="#0C447C">Please explain slowly.</text>
+  <g font-size="13" fill="#444441">
+    <text x="50" y="262">Memory panel: empty</text>
+    <text x="50" y="288">Contradictions: none found</text>
+    <text x="50" y="314">Links to past chats: none</text>
+    <text x="50" y="350" font-weight="600" fill="#A32D2D">Generic stalling. No intel gained.</text>
+    <text x="50" y="372" fill="#5F5E5A">This is what a stateless bot does.</text>
+  </g>
+
+  <rect x="500" y="30" width="430" height="370" rx="12" fill="#E1F5EE" stroke="#0F6E56" stroke-width="2"/>
+  <text x="715" y="62" text-anchor="middle" font-size="17" font-weight="600" fill="#04342C">Memory ON</text>
+  <text x="715" y="82" text-anchor="middle" font-size="12" fill="#0F6E56">recall from 20 past conversations</text>
+  <rect x="520" y="102" width="330" height="54" rx="8" fill="#FFFFFF" stroke="#5DCAA5"/>
+  <text x="532" y="124" font-size="12.5" fill="#2C2C2A">Scammer: Inspector Sharma, CBI. Your</text>
+  <text x="532" y="142" font-size="12.5" fill="#2C2C2A">case number is DL/4410.</text>
+  <rect x="580" y="168" width="330" height="54" rx="8" fill="#E6F1FB" stroke="#85B7EB"/>
+  <text x="592" y="190" font-size="12.5" fill="#0C447C">Ajji: Sir, last week your colleague said</text>
+  <text x="592" y="208" font-size="12.5" fill="#0C447C">MH/2291. Which one I write down?</text>
+  <g font-size="13" fill="#085041">
+    <text x="520" y="262">Memory panel: 3 recalled facts</text>
+    <text x="520" y="288" fill="#A32D2D">Contradiction: case no. changed (chat #7)</text>
+    <text x="520" y="314">Links: Sharma and Verma share one UPI</text>
+    <text x="520" y="350" font-weight="600">Longer stall, sharper probing, a ring exposed.</text>
+    <text x="520" y="372" fill="#0F6E56">Same opener, same model. Only recall differs.</text>
+  </g>
+</svg>
