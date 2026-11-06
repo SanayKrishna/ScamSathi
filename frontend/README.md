@@ -39,11 +39,13 @@ On mocks, put `/degraded` anywhere in a scammer message to preview the degraded 
 | `GET /network?conversation_id=` | Network panel, after each message | Rings form; nodes in this chat get a white ring |
 | `POST /demo/seed`, `GET /demo/seed/{job_id}` | Demo menu (sliders icon) | Progress bar advances to done |
 | `POST /demo/reset` | Demo menu, type RESET | Stats drop to zero |
-
-
 | Errors (`ApiError`) | Toast at the bottom | `error.message` shows, never a raw error |
 
 A turn slower than 4 seconds shows "<name> is looking for her glasses..." under the typing indicator.
+
+## Keyboard shortcuts
+
+`M` toggles memory, `N` starts a new chat and `P` opens the walkthrough script. They work when focus is outside the text box. `Esc` leaves the text box, and `Alt + key` works while typing. Checked at 1920x1080 and 1366x768 with no overflow.
 
 ## Structure
 
