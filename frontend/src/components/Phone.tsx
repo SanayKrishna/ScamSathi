@@ -45,11 +45,11 @@ export function Phone() {
       </div>
 
       <div className="flex items-center gap-2">
-        <PillButton onClick={actions.newChat} disabled={pending !== 'idle'} tone="dark" kbd="N">
+        <PillButton onClick={actions.newChat} disabled={pending !== 'idle'} tone="dark" title="New chat (N)">
           <Plus size={16} weight="bold" />
           New chat
         </PillButton>
-        <PillButton onClick={actions.endChat} disabled={!live || pending !== 'idle'} tone="light">
+        <PillButton onClick={actions.endChat} disabled={!live || pending !== 'idle'} tone="light" title="End chat">
           <PhoneDisconnect size={16} weight="bold" />
           End chat
         </PillButton>
@@ -360,13 +360,13 @@ function PillButton({
   onClick,
   disabled,
   tone,
-  kbd,
+  title,
   children,
 }: {
   onClick: () => void
   disabled?: boolean
   tone: 'dark' | 'light'
-  kbd?: string
+  title?: string
   children: ReactNode
 }) {
   return (
@@ -374,13 +374,13 @@ function PillButton({
       type="button"
       onClick={onClick}
       disabled={disabled}
+      title={title}
       whileTap={{ scale: 0.96 }}
       className={`inline-flex items-center gap-2 rounded-full px-4 py-2 button-sm transition-[opacity,background-color] disabled:pointer-events-none disabled:opacity-40 ${
         tone === 'dark' ? 'bg-ink text-white hover:bg-ink/85' : 'bg-white text-ink shadow-soft hover:bg-fill-2'
       }`}
     >
       {children}
-      {kbd && <kbd className="caption-5 rounded bg-white/15 px-1 font-mono">{kbd}</kbd>}
     </motion.button>
   )
 }

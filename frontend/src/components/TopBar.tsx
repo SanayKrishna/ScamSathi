@@ -21,7 +21,7 @@ export function TopBar({ view, onView, onOpenPresenter }: TopBarProps) {
     <header className="relative z-30 grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center bg-white px-6 shadow-[0_1px_0_rgb(0_0_0/0.05)]">
       <div className="flex items-center gap-2">
         <img src="/favicon.svg" alt="" className="size-8" />
-        <span className="title-2 font-semibold tracking-tight">{config.personaName}</span>
+        <span className="title-2 font-semibold tracking-tight">{config.productName}</span>
       </div>
 
       <nav aria-label="Main" className="flex items-center gap-1">

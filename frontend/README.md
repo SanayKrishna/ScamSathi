@@ -17,6 +17,7 @@ npm run build          # type check and production build
 |---|---|---|
 | `VITE_API_URL` | `http://localhost:8000` | FastAPI backend |
 | `VITE_USE_MOCKS` | `true` | `true` serves `src/mocks/*.json`, `false` calls the backend |
+| `VITE_PRODUCT_NAME` | `ScamSathi` | Product name in the top bar and browser tab |
 | `VITE_PERSONA_NAME` | `Ajji` | Persona display name. Rename here only |
 
 On mocks, put `/degraded` anywhere in a scammer message to preview the degraded reply.
