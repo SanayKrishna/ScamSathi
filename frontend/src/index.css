@@ -2,51 +2,58 @@
 @import '@fontsource-variable/geist-mono';
 @import 'tailwindcss';
 
-/* Design system: .claude/skills/landing-page-design (Part B).
-   Flat dark surfaces, one typeface (Geist, Geist Mono for data only),
+/* Design system: .claude/skills/landing-page-design (Part B), light Apple style.
+   White and light gray surfaces, soft shadows instead of borders, iOS system
+   accents used sparingly, one typeface (Geist, Geist Mono for identifiers),
    Tailwind type scale, spacing tokens only, one easing curve. */
 
 @theme {
   --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
 
-  /* Surfaces (skill B4 dark palette) */
-  --color-bg: #000000;
-  --color-panel: #181818;
-  --color-card: #1f1f1f;
-  --color-raised: #272727;
-  --color-line: #313131;
+  /* Surfaces */
+  --color-page: #ffffff;
+  --color-stage: #f5f5f7;
+  --color-fill: #e9e9eb;
+  --color-fill-2: #f2f2f7;
+  --color-hair: #e5e5ea;
+  --color-bezel: #1d1d1f;
 
   /* Text */
-  --color-ink: #ffffff;
-  --color-ink-2: #b4b4b4;
-  --color-ink-3: #8a8a8a;
+  --color-ink: #1d1d1f;
+  --color-ink-2: #6e6e73;
+  --color-ink-3: #86868b;
 
-  /* Accents, used sparingly */
-  --color-mem: #4ade80;
-  --color-mem-dim: #14532d;
-  --color-alert: #f87171;
-  --color-alert-dim: #3b1414;
-  --color-warn: #fbbf24;
-
-  /* Graph node types */
-  --color-node-alias: #e5e5e5;
-  --color-node-upi: #4ade80;
-  --color-node-phone: #93c5fd;
-  --color-node-agency: #737373;
+  /* iOS system accents */
+  --color-blue: #0a84ff;
+  --color-mem: #34c759;
+  --color-mem-soft: #e8f8ec;
+  --color-alert: #ff3b30;
+  --color-alert-soft: #fff0ef;
+  --color-warn: #ff9f0a;
 
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   --default-transition-duration: 300ms;
 }
 
-/* Named text styles (skill B1). Large type mode is the default for projection,
-   so body copy uses 18px (Title 2 / text-lg) where readability matters. */
-@utility heading-1 { font-size: var(--text-6xl); line-height: 1; font-weight: 600; }
-@utility heading-2 { font-size: var(--text-5xl); line-height: 1; font-weight: 600; }
-@utility heading-3 { font-size: var(--text-4xl); line-height: 2.5rem; font-weight: 600; }
-@utility heading-4 { font-size: var(--text-3xl); line-height: 2.25rem; font-weight: 600; }
-@utility heading-5 { font-size: var(--text-2xl); line-height: 2rem; font-weight: 600; }
+/* Soft layered shadows replace borders. */
+@utility shadow-soft {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.06);
+}
+@utility shadow-lift {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.04), 0 16px 48px rgb(0 0 0 / 0.1);
+}
+@utility shadow-phone {
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.08), 0 30px 80px rgb(0 0 0 / 0.18);
+}
+
+/* Named text styles (skill B1). */
+@utility heading-1 { font-size: var(--text-6xl); line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+@utility heading-2 { font-size: var(--text-5xl); line-height: 1; font-weight: 600; letter-spacing: -0.02em; }
+@utility heading-3 { font-size: var(--text-4xl); line-height: 2.5rem; font-weight: 600; letter-spacing: -0.02em; }
+@utility heading-4 { font-size: var(--text-3xl); line-height: 2.25rem; font-weight: 600; letter-spacing: -0.01em; }
+@utility heading-5 { font-size: var(--text-2xl); line-height: 2rem; font-weight: 600; letter-spacing: -0.01em; }
 @utility heading-6 { font-size: var(--text-xl); line-height: 1.75rem; font-weight: 600; }
 @utility title-1 { font-size: var(--text-xl); line-height: 1.75rem; font-weight: 500; }
 @utility title-2 { font-size: var(--text-lg); line-height: 1.75rem; font-weight: 500; }
@@ -71,7 +78,7 @@
 @utility caption-5 { font-size: var(--text-xs); line-height: 1rem; font-weight: 400; }
 
 @utility hero-text {
-  background-image: linear-gradient(to right, #ffffff, #9b9b9b);
+  background-image: linear-gradient(to right, #000000, #666666);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -85,28 +92,27 @@
   }
 
   body {
-    background: var(--color-bg);
+    background: var(--color-stage);
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'ss01', 'cv11';
   }
 
   h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
   p { text-wrap: pretty; }
 
   :focus-visible {
-    outline: 2px solid var(--color-ink);
+    outline: 2px solid var(--color-blue);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 
-  ::selection { background: #ffffff33; }
+  ::selection { background: rgb(10 132 255 / 0.2); }
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: #313131 transparent;
+    scrollbar-color: #d1d1d6 transparent;
   }
 }
 

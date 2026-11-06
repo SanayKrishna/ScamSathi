@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowCounterClockwise, Database, SlidersHorizontal } from '@phosphor-icons/react'
+import { ArrowCounterClockwise, Database, DotsThree } from '@phosphor-icons/react'
 import { useEffect, useRef, useState } from 'react'
 import { api, ApiClientError } from '../api'
 import { EASE } from '../lib/motion'
@@ -31,9 +31,12 @@ export function DemoMenu() {
     }
   }, [open])
 
-  useEffect(() => () => {
-    if (pollRef.current) window.clearTimeout(pollRef.current)
-  }, [])
+  useEffect(
+    () => () => {
+      if (pollRef.current) window.clearTimeout(pollRef.current)
+    },
+    [],
+  )
 
   const seeding = seed?.status === 'running'
 
@@ -85,50 +88,56 @@ export function DemoMenu() {
 
   return (
     <div ref={rootRef} className="relative">
-      <button
+      <motion.button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-haspopup="dialog"
-        className="relative grid size-14 place-items-center rounded-full border border-line/60 text-ink-2 transition-[background-color,color] hover:bg-panel hover:text-ink active:scale-[0.98]"
+        aria-label="Demo controls"
         title="Demo controls"
+        whileTap={{ scale: 0.94 }}
+        className={`relative grid size-10 place-items-center rounded-full transition-colors ${
+          open ? 'bg-fill text-ink' : 'text-ink-2 hover:bg-fill-2 hover:text-ink'
+        }`}
       >
-        <SlidersHorizontal size={22} />
+        <DotsThree size={22} weight="bold" />
         {seeding && <span className="absolute top-2 right-2 size-2 animate-pulse rounded-full bg-mem" />}
-      </button>
+      </motion.button>
 
       <AnimatePresence>
         {open && (
           <motion.div
             role="dialog"
             aria-label="Demo controls"
-            initial={{ opacity: 0, y: -8, scale: 0.98 }}
+            initial={{ opacity: 0, y: -8, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -4, scale: 0.98 }}
+            exit={{ opacity: 0, y: -4, scale: 0.97 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="absolute top-full right-0 z-50 mt-2 w-96 origin-top-right rounded-3xl border border-line bg-panel/95 p-3 shadow-2xl shadow-black backdrop-blur-xl"
+            className="absolute top-full right-0 z-50 mt-2 w-96 origin-top-right rounded-3xl bg-white/90 p-3 shadow-lift backdrop-blur-2xl"
           >
             <p className="caption-3 px-3 pt-2 pb-3 uppercase tracking-wider text-ink-3">Demo controls</p>
 
-            <div className="rounded-xl bg-card p-4">
+            <div className="rounded-xl bg-fill-2 p-4">
               <div className="flex items-start gap-3">
-                <Database size={20} className="mt-0.5 text-ink-2" />
+                <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white text-blue shadow-soft">
+                  <Database size={16} weight="bold" />
+                </span>
                 <div className="flex-1">
                   <p className="title-3">Seed past conversations</p>
-                  <p className="body-6 text-ink-3">Runs about 20 simulated scam chats so memory has history.</p>
+                  <p className="body-6 text-ink-2">Runs about 20 simulated scam chats so memory has history.</p>
                 </div>
               </div>
               {seed && (
                 <div className="mt-3">
-                  <div className="h-2 overflow-hidden rounded-full bg-raised">
+                  <div className="h-2 overflow-hidden rounded-full bg-white">
                     <motion.div
-                      className="h-full origin-left rounded-full bg-mem"
+                      className="h-full origin-left rounded-full bg-blue"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: pct / 100 }}
                       transition={{ duration: 0.5, ease: EASE }}
                     />
                   </div>
-                  <p className="caption-5 mt-2 text-ink-3 tabular-nums">
+                  <p className="caption-5 mt-2 text-ink-2 tabular-nums">
                     {seed.conversations_done} of {seed.conversations_planned} · {seed.status}
                   </p>
                 </div>
@@ -137,18 +146,20 @@ export function DemoMenu() {
                 type="button"
                 onClick={startSeed}
                 disabled={seeding}
-                className="mt-3 w-full rounded-full bg-ink px-3 py-2 button-sm text-bg transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] disabled:opacity-40"
+                className="mt-3 w-full rounded-full bg-blue px-3 py-2 button-sm text-white transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] disabled:opacity-40"
               >
                 {seeding ? 'Seeding...' : 'Start seed'}
               </button>
             </div>
 
-            <div className="mt-2 rounded-xl bg-card p-4">
+            <div className="mt-2 rounded-xl bg-fill-2 p-4">
               <div className="flex items-start gap-3">
-                <ArrowCounterClockwise size={20} className="mt-0.5 text-alert" />
+                <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white text-alert shadow-soft">
+                  <ArrowCounterClockwise size={16} weight="bold" />
+                </span>
                 <div className="flex-1">
                   <p className="title-3">Reset everything</p>
-                  <p className="body-6 text-ink-3">Wipes the database and the memory bank. Type RESET to confirm.</p>
+                  <p className="body-6 text-ink-2">Wipes the database and the memory bank. Type RESET to confirm.</p>
                 </div>
               </div>
               <div className="mt-3 flex gap-2">
@@ -158,13 +169,13 @@ export function DemoMenu() {
                   onKeyDown={(e) => e.key === 'Enter' && void reset()}
                   placeholder="RESET"
                   aria-label="Type RESET to confirm"
-                  className="min-w-0 flex-1 rounded-full border border-line bg-bg px-3 py-2 body-6 font-mono text-ink outline-none placeholder:text-ink-3/50 focus:border-alert/60"
+                  className="min-w-0 flex-1 rounded-full bg-white px-3 py-2 body-6 font-mono text-ink shadow-soft outline-none placeholder:text-ink-3/60 focus:ring-2 focus:ring-alert/40"
                 />
                 <button
                   type="button"
                   onClick={reset}
                   disabled={confirmText !== 'RESET' || resetting}
-                  className="rounded-full bg-alert px-3 py-2 button-sm text-bg transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] disabled:opacity-30"
+                  className="rounded-full bg-alert px-3 py-2 button-sm text-white transition-[opacity,transform] hover:opacity-90 active:scale-[0.98] disabled:opacity-30"
                 >
                   {resetting ? 'Resetting...' : 'Reset'}
                 </button>
