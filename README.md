@@ -348,6 +348,10 @@ cd backend
 Other smoke scripts:
 
 ```powershell
+# Full J1 check against the seeded bank: health, stats, memory off vs on,
+# recalled memories and contradictions. Run it after seeding.
+.venv\Scripts\python scripts\demo_check.py
+
 # Resets the bank, retains 3 messages, recalls the shared UPI. Destructive: do not run it on a seeded bank you want to keep.
 .venv\Scripts\python scripts\memory_smoke.py
 
@@ -359,7 +363,7 @@ Other smoke scripts:
 
 ## Walkthrough
 
-Use the presenter script in the UI (`P`) or follow this:
+A short walkthrough of the product on a seeded bank. The same steps are in the in-app script (`P`).
 
 1. **Memory OFF.** Start a new chat (`N`) and type the opener as the scammer: *“Madam, this is Inspector Sharma from CBI Mumbai. Your Aadhaar is linked to money laundering. Case number DL/4410.”* Ajji panics generically. The memory panel says memory is off.
 2. **Memory ON.** Toggle memory (`M`), start a new chat (`N`), send the exact same opener.
