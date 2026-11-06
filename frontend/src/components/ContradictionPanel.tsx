@@ -61,7 +61,7 @@ function ContradictionCard({ flag }: { flag: SeenContradiction }) {
       animate={{ opacity: 1, x: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.5, ease: EASE }}
-      className={`relative overflow-hidden rounded-xl border p-4 ${
+      className={`relative overflow-hidden rounded-xl border p-4 [@media(max-height:860px)]:p-3 ${
         high ? 'border-alert/70 bg-alert-dim' : 'border-alert/25 bg-card'
       }`}
     >
@@ -84,7 +84,7 @@ function ContradictionCard({ flag }: { flag: SeenContradiction }) {
           {flag.severity}
         </span>
       </div>
-      <div className="relative mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3">
+      <div className="relative mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 [@media(max-height:860px)]:mt-2">
         <Claim label="Now" value={flag.claim_now} strong />
         <ArrowsLeftRight size={18} className="text-ink-3" />
         <Claim label={chat ? `Before · chat #${chat}` : 'Before'} value={flag.claim_before} />

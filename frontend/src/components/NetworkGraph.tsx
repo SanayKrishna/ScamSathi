@@ -135,11 +135,11 @@ export function NetworkGraph() {
     const fg = fgRef.current
     if (!fg) return
     const charge = fg.d3Force('charge') as unknown as { strength: (v: number) => { distanceMax: (v: number) => void } } | undefined
-    charge?.strength(-180).distanceMax(220)
+    charge?.strength(-200).distanceMax(400)
     const link = fg.d3Force('link') as unknown as { distance?: (d: number) => void } | undefined
     link?.distance?.(48)
-    fg.d3Force('x', forceX<GNode>(0).strength(0.06) as never)
-    fg.d3Force('y', forceY<GNode>(0).strength(0.1) as never)
+    fg.d3Force('x', forceX<GNode>(0).strength(0.05) as never)
+    fg.d3Force('y', forceY<GNode>(0).strength(0.08) as never)
     fg.d3Force('collide', forceCollide<GNode>((n) => radius(n) + (n.type === "alias" ? 30 : 20)) as never)
     fg.d3ReheatSimulation()
   }, [graphReady])
@@ -151,7 +151,8 @@ export function NetworkGraph() {
       n.fy = n.y
     }
     if (cache.current.size > 0) {
-      fgRef.current?.zoomToFit(fitted.current ? 600 : 0, 56)
+      const h = wrapRef.current?.clientHeight ?? 300
+      fgRef.current?.zoomToFit(fitted.current ? 600 : 0, Math.max(20, Math.min(56, h * 0.16)))
       fitted.current = true
     }
   }, [])
@@ -370,7 +371,7 @@ export function NetworkGraph() {
 
 function Legend() {
   return (
-    <div className="pointer-events-none absolute bottom-3 left-3 flex flex-wrap gap-3 rounded-full bg-panel/80 px-3 py-1 backdrop-blur">
+    <div className="pointer-events-none absolute bottom-3 left-3 flex flex-wrap gap-3 rounded-full bg-panel/80 px-3 py-1 backdrop-blur [@media(max-height:860px)]:hidden">
       {(Object.keys(NODE_COLOR) as NodeType[]).map((t) => (
         <span key={t} className="inline-flex items-center gap-1 caption-4 text-ink-3">
           <span className="size-2 rounded-full" style={{ background: NODE_COLOR[t] }} />

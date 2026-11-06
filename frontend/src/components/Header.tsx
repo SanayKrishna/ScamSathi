@@ -1,11 +1,12 @@
 import { animate, motion, useMotionValue, useTransform } from 'motion/react'
+import { Presentation } from '@phosphor-icons/react'
 import { useEffect } from 'react'
 import { config } from '../config'
 import { EASE } from '../lib/motion'
 import { useStore } from '../store'
 import { DemoMenu } from './DemoMenu'
 
-export function Header() {
+export function Header({ onOpenPresenter }: { onOpenPresenter: () => void }) {
   const { state } = useStore()
   const { stats } = state
 
@@ -15,7 +16,7 @@ export function Header() {
         <img src="/favicon.svg" alt="" className="size-10" />
         <div className="min-w-0">
           <p className="heading-5 tracking-tight">{config.personaName}</p>
-          <p className="caption-2 truncate text-ink-3">Remembers every scammer she talks to</p>
+          <p className="caption-2 hidden truncate text-ink-3 2xl:block">Remembers every scammer she talks to</p>
         </div>
       </div>
 
@@ -33,6 +34,15 @@ export function Header() {
       <div className="flex items-center gap-3">
         <HealthDot />
         <MemoryToggle />
+        <button
+          type="button"
+          onClick={onOpenPresenter}
+          title="Presenter script (P)"
+          aria-label="Presenter script"
+          className="grid size-14 place-items-center rounded-full border border-line/60 text-ink-2 transition-[background-color,color] hover:bg-panel hover:text-ink active:scale-[0.98]"
+        >
+          <Presentation size={22} />
+        </button>
         <DemoMenu />
       </div>
     </header>
@@ -55,7 +65,7 @@ function Stat({
       <dt className="caption-4 whitespace-nowrap text-ink-3">{label}</dt>
       <dd className={`flex items-baseline gap-1 heading-4 tabular-nums ${tone === 'alert' ? 'text-alert' : 'text-ink'}`}>
         {value === undefined ? (
-          <span className="my-2 block h-6 w-12 animate-pulse rounded-lg bg-raised" />
+          <span className="block h-9 w-16 animate-pulse rounded-lg bg-raised" />
         ) : (
           <AnimatedNumber value={value} />
         )}
@@ -120,7 +130,7 @@ function HealthDot() {
         {ok && <span className="absolute inset-0 animate-ping rounded-full bg-mem opacity-60" />}
         <span className={`relative size-2 rounded-full ${!h ? 'bg-ink-3' : ok ? 'bg-mem' : 'bg-warn'}`} />
       </span>
-      <span className="caption-1 text-ink-2">
+      <span className="caption-1 hidden whitespace-nowrap text-ink-2 2xl:inline">
         {!h
           ? 'Checking'
           : ok
