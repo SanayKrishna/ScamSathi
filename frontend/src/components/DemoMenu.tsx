@@ -95,8 +95,8 @@ export function DemoMenu() {
         aria-haspopup="dialog"
         aria-label="Demo controls"
         title="Demo controls"
-        className={`relative flex items-center gap-1 rounded-md px-2 py-1 body-5 transition-colors ${
-          open ? 'bg-fill-2 text-ink' : 'text-ink-2 hover:text-ink'
+        className={`relative flex items-center gap-1 rounded-lg px-3 py-2 body-3 transition-colors hover:bg-fill-2 ${
+          open ? 'bg-fill-2 text-ink' : 'text-ink/80 hover:text-ink'
         }`}
       >
         Demo
@@ -113,7 +113,7 @@ export function DemoMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.97 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="absolute top-full right-0 z-50 mt-3 w-96 origin-top-right rounded-3xl bg-white/90 p-3 shadow-lift backdrop-blur-2xl"
+            className="absolute top-full left-1/2 z-50 mt-3 w-96 -translate-x-1/2 origin-top rounded-3xl bg-white/90 p-3 shadow-lift backdrop-blur-2xl"
           >
             <p className="caption-3 px-3 pt-2 pb-3 uppercase tracking-wider text-ink-3">Demo controls</p>
 
