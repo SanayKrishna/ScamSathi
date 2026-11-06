@@ -225,5 +225,6 @@ def test_ensure_bank_creates_when_lookup_raises_aiohttp_404(monkeypatch):
                 "scammers said: aliases, agencies, case numbers, UPI IDs and phones."
             ),
             "disposition": {"skepticism": 4, "literalism": 3, "empathy": 4},
+            "enable_observations": False,
         }
     ]

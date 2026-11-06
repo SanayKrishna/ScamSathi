@@ -252,6 +252,24 @@ It listens on `http://localhost:8888`, uses an embedded PostgreSQL (`pg0`) for d
 > `HINDSIGHT_API_LLM_GROQ_SERVICE_TIER=on_demand` (the value above) before starting it.
 > The Hindsight default is `auto`, which some Groq plans reject.
 
+#### Low-quota / offline fallback
+
+Hindsight's fact extraction is token-heavy. Groq's free tier is **8,000 tokens per
+minute**, and one retain can request several thousand tokens; Hindsight itself
+recommends a paid tier for Groq. If you do not have a paid tier or Cloud credits,
+run Hindsight with no LLM:
+
+```powershell
+$env:HINDSIGHT_API_LLM_PROVIDER = "none"
+hindsight-api
+```
+
+Retain then stores each message as a chunk (no fact extraction) and recall uses the
+local embedding + reranker. The memory panel shows the raw earlier messages rather
+than extracted facts; the SQLite graph, stats and contradictions are unchanged.
+Reset and reseed after switching. This is the most reliable path for a demo on a
+free-tier key.
+
 Then keep `backend/.env` at:
 
 ```dotenv
@@ -434,6 +452,11 @@ Backend tests are offline: Groq and Hindsight are monkeypatched. They cover IOC 
 - **`/health` reports configuration, not a live ping.** It says `hindsight: "ok"` when `HINDSIGHT_URL` is set. Actual recall failures show up per turn in `degraded`.
 - **`memories_in_bank` in `/stats` is a SQLite estimate** (scammer messages + ended conversations), not a live Hindsight count. The header only displays four stats anyway.
 - **Contradictions use SQLite, not Hindsight.** They are exact, deterministic and gated by the same memory toggle; they are capped at three per turn and only compare other conversations.
+- **Hindsight's fact extraction needs a paid Groq tier or Cloud.** The free
+  8,000 TPM limit is smaller than one retain request. For the demo, use
+  `HINDSIGHT_API_LLM_PROVIDER=none` (raw chunks, local embeddings) or Hindsight
+  Cloud. The graph and contradictions still work; the memory panel shows raw
+  earlier messages instead of extracted facts.
 - **The seed can be slow on Groq’s free tier.** It paces turns and retries 429s, but 20 conversations still take minutes. Use a paid tier or `--no-llm` for the scammer lines.
 - **The seed job calls the API over HTTP.** If the backend is not on `127.0.0.1:8000`, set `SEED_BASE_URL` in `backend/.env`.
 - **Reload restores the thread, not the side panels.** The frontend restores messages from `GET /conversations/{id}`; memories, contradictions and identifiers refill on the next message.

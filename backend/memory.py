@@ -122,6 +122,9 @@ def ensure_bank() -> None:
                     "scammers said: aliases, agencies, case numbers, UPI IDs and phones."
                 ),
                 disposition={"skepticism": 4, "literalism": 3, "empathy": 4},
+                # Observations/consolidation are extra LLM calls; the demo
+                # only needs retain + recall, especially on a small Groq plan.
+                enable_observations=False,
             )
             logger.info("created Hindsight bank %s", settings.hindsight_bank_id)
         except Exception as exc:
