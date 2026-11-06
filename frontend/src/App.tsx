@@ -2,7 +2,7 @@ import { Chat } from './components/Chat'
 import { Header } from './components/Header'
 import { ContradictionPanel } from './components/ContradictionPanel'
 import { MemoryPanel } from './components/MemoryPanel'
-import { Panel } from './components/Panel'
+import { NetworkGraph } from './components/NetworkGraph'
 import { StoreProvider } from './store'
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
           <div className="grid min-h-0 grid-rows-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,1.1fr)] gap-4">
             <MemoryPanel />
             <ContradictionPanel />
-            <Panel title="Scam network">{null}</Panel>
+            <NetworkGraph />
           </div>
         </main>
       </div>
