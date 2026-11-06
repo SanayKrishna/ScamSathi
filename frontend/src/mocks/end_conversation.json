@@ -1,0 +1,31 @@
+{
+    "conversation_id": "conv_0021",
+    "ended_at": "2026-11-06T10:55:10Z",
+    "duration_seconds": 910,
+    "summary": {
+        "aliases": [
+            "inspector sharma"
+        ],
+        "agencies_claimed": [
+            "cbi"
+        ],
+        "case_numbers": [
+            "DL/4410"
+        ],
+        "upi_ids": [
+            "sharma.verify@fakebank"
+        ],
+        "phones": [
+            "5550142233"
+        ],
+        "stages_reached": [
+            "intro_threat",
+            "fake_case_number",
+            "video_call_demand"
+        ],
+        "tactics": [
+            "urgency",
+            "isolation: told not to tell family"
+        ]
+    }
+}

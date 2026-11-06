@@ -1,0 +1,73 @@
+{
+    "conversation_id": "conv_0021",
+    "scammer_message_id": 41,
+    "reply": {
+        "id": 42,
+        "sender": "ajji",
+        "text": "Aiyyo, sir! But last week your colleague told me case is MH/2291. Which one I should write down? My pen is not working also.",
+        "created_at": "2026-11-06T10:42:03Z"
+    },
+    "memory_enabled": true,
+    "recalled_memories": [
+        {
+            "text": "'Officer Verma' (claimed CBI) asked for transfer to UPI sharma.verify@fakebank in conversation conv_0004.",
+            "why_relevant": "Same UPI handle the scammer is likely to push",
+            "source_conversation_id": "conv_0004",
+            "matched_ioc": {
+                "type": "alias",
+                "value": "inspector sharma"
+            }
+        },
+        {
+            "text": "Inspector Sharma gave case number MH/2291 in conversation conv_0007.",
+            "why_relevant": "Same alias, different case number",
+            "source_conversation_id": "conv_0007",
+            "matched_ioc": {
+                "type": "alias",
+                "value": "inspector sharma"
+            }
+        },
+        {
+            "text": "This ring moves to a video-call demand within 3 messages of the case number.",
+            "why_relevant": "Predicts the next script stage",
+            "source_conversation_id": null,
+            "matched_ioc": null
+        }
+    ],
+    "extracted_iocs": [
+        {
+            "type": "alias",
+            "value": "inspector sharma"
+        },
+        {
+            "type": "agency_claimed",
+            "value": "cbi"
+        },
+        {
+            "type": "case_number",
+            "value": "DL/4410"
+        },
+        {
+            "type": "script_stage",
+            "value": "fake_case_number"
+        }
+    ],
+    "contradiction_flags": [
+        {
+            "kind": "case_number_changed",
+            "claim_now": "Case DL/4410",
+            "claim_before": "Case MH/2291",
+            "source_conversation_id": "conv_0007",
+            "severity": "high"
+        }
+    ],
+    "script_stage": "fake_case_number",
+    "timings_ms": {
+        "extract": 410,
+        "recall": 620,
+        "reply": 980,
+        "retain": 0,
+        "total": 2010
+    },
+    "degraded": []
+}

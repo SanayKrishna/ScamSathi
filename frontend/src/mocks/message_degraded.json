@@ -1,0 +1,32 @@
+{
+    "conversation_id": "conv_0021",
+    "scammer_message_id": 43,
+    "reply": {
+        "id": 44,
+        "sender": "ajji",
+        "text": "Sorry beta, my hearing aid is making noise. Say again?",
+        "created_at": "2026-11-06T10:43:15Z"
+    },
+    "memory_enabled": true,
+    "recalled_memories": [],
+    "extracted_iocs": [
+        {
+            "type": "upi",
+            "value": "sharma.verify@fakebank"
+        }
+    ],
+    "contradiction_flags": [],
+    "script_stage": "verification_transfer",
+    "timings_ms": {
+        "extract": 12,
+        "recall": 8000,
+        "reply": 5,
+        "retain": 0,
+        "total": 8020
+    },
+    "degraded": [
+        "recall_unavailable",
+        "extract_fallback_regex",
+        "reply_fallback_canned"
+    ]
+}

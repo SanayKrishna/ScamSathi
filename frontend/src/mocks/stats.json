@@ -1,0 +1,11 @@
+{
+    "conversations": 21,
+    "total_minutes_wasted_estimate": 214,
+    "minutes_is_estimate": true,
+    "unique_aliases": 10,
+    "unique_upi": 6,
+    "unique_phones": 7,
+    "rings_detected": 3,
+    "contradictions_caught": 14,
+    "memories_in_bank": 312
+}

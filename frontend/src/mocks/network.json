@@ -1,0 +1,141 @@
+{
+    "nodes": [
+        {
+            "id": "alias:inspector sharma",
+            "type": "alias",
+            "label": "Inspector Sharma",
+            "first_seen": "2026-11-05T14:00:00Z",
+            "count": 3,
+            "ring_id": "ring_1",
+            "in_current": true
+        },
+        {
+            "id": "alias:officer verma",
+            "type": "alias",
+            "label": "Officer Verma",
+            "first_seen": "2026-11-05T14:20:00Z",
+            "count": 2,
+            "ring_id": "ring_1",
+            "in_current": false
+        },
+        {
+            "id": "upi:sharma.verify@fakebank",
+            "type": "upi",
+            "label": "sharma.verify@fakebank",
+            "first_seen": "2026-11-05T14:21:00Z",
+            "count": 4,
+            "ring_id": "ring_1",
+            "in_current": false
+        },
+        {
+            "id": "phone:5550142233",
+            "type": "phone",
+            "label": "555-014-2233",
+            "first_seen": "2026-11-05T14:00:00Z",
+            "count": 2,
+            "ring_id": "ring_1",
+            "in_current": false
+        },
+        {
+            "id": "alias:customs officer rao",
+            "type": "alias",
+            "label": "Customs Officer Rao",
+            "first_seen": "2026-11-05T15:05:00Z",
+            "count": 2,
+            "ring_id": "ring_2",
+            "in_current": false
+        },
+        {
+            "id": "alias:trai desk mehta",
+            "type": "alias",
+            "label": "TRAI Desk Mehta",
+            "first_seen": "2026-11-05T15:30:00Z",
+            "count": 1,
+            "ring_id": "ring_2",
+            "in_current": false
+        },
+        {
+            "id": "upi:parcel.clear@fakebank",
+            "type": "upi",
+            "label": "parcel.clear@fakebank",
+            "first_seen": "2026-11-05T15:06:00Z",
+            "count": 3,
+            "ring_id": "ring_2",
+            "in_current": false
+        },
+        {
+            "id": "agency_claimed:cbi",
+            "type": "agency_claimed",
+            "label": "CBI",
+            "first_seen": "2026-11-05T14:00:00Z",
+            "count": 9,
+            "ring_id": null,
+            "in_current": true
+        },
+        {
+            "id": "agency_claimed:customs",
+            "type": "agency_claimed",
+            "label": "Customs",
+            "first_seen": "2026-11-05T15:05:00Z",
+            "count": 4,
+            "ring_id": null,
+            "in_current": false
+        }
+    ],
+    "edges": [
+        {
+            "source": "alias:inspector sharma",
+            "target": "upi:sharma.verify@fakebank",
+            "relation": "uses_upi",
+            "weight": 2
+        },
+        {
+            "source": "alias:officer verma",
+            "target": "upi:sharma.verify@fakebank",
+            "relation": "uses_upi",
+            "weight": 2
+        },
+        {
+            "source": "alias:officer verma",
+            "target": "phone:5550142233",
+            "relation": "uses_phone",
+            "weight": 1
+        },
+        {
+            "source": "alias:inspector sharma",
+            "target": "phone:5550142233",
+            "relation": "uses_phone",
+            "weight": 1
+        },
+        {
+            "source": "alias:inspector sharma",
+            "target": "agency_claimed:cbi",
+            "relation": "claims_agency",
+            "weight": 3
+        },
+        {
+            "source": "alias:officer verma",
+            "target": "agency_claimed:cbi",
+            "relation": "claims_agency",
+            "weight": 2
+        },
+        {
+            "source": "alias:customs officer rao",
+            "target": "upi:parcel.clear@fakebank",
+            "relation": "uses_upi",
+            "weight": 2
+        },
+        {
+            "source": "alias:trai desk mehta",
+            "target": "upi:parcel.clear@fakebank",
+            "relation": "uses_upi",
+            "weight": 1
+        },
+        {
+            "source": "alias:customs officer rao",
+            "target": "agency_claimed:customs",
+            "relation": "claims_agency",
+            "weight": 2
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "conversation_id": "conv_0021",
+    "persona": "ajji",
+    "started_at": "2026-11-06T10:40:00Z",
+    "ended_at": null,
+    "messages": [
+        {
+            "id": 40,
+            "sender": "ajji",
+            "text": "Hello? Who is speaking? My grandson usually picks up the phone.",
+            "created_at": "2026-11-06T10:40:00Z"
+        },
+        {
+            "id": 41,
+            "sender": "scammer",
+            "text": "Madam, this is Inspector Sharma from CBI Mumbai. Your Aadhaar is linked to money laundering. Case number DL/4410.",
+            "created_at": "2026-11-06T10:42:00Z"
+        },
+        {
+            "id": 42,
+            "sender": "ajji",
+            "text": "Aiyyo, sir! But last week your colleague told me case is MH/2291. Which one I should write down? My pen is not working also.",
+            "created_at": "2026-11-06T10:42:03Z"
+        }
+    ]
+}

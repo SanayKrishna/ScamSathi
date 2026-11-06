@@ -1,0 +1,6 @@
+{
+    "error": {
+        "code": "conversation_not_found",
+        "message": "That conversation doesn't exist. Start a new one."
+    }
+}

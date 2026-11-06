@@ -1,0 +1,40 @@
+{
+    "conversation_id": "conv_0021",
+    "scammer_message_id": 41,
+    "reply": {
+        "id": 42,
+        "sender": "ajji",
+        "text": "Oh no, sir, what have I done? Please explain slowly, I am old woman, I don't understand all this computer business.",
+        "created_at": "2026-11-06T10:42:02Z"
+    },
+    "memory_enabled": false,
+    "recalled_memories": [],
+    "extracted_iocs": [
+        {
+            "type": "alias",
+            "value": "inspector sharma"
+        },
+        {
+            "type": "agency_claimed",
+            "value": "cbi"
+        },
+        {
+            "type": "case_number",
+            "value": "DL/4410"
+        },
+        {
+            "type": "script_stage",
+            "value": "fake_case_number"
+        }
+    ],
+    "contradiction_flags": [],
+    "script_stage": "fake_case_number",
+    "timings_ms": {
+        "extract": 400,
+        "recall": 0,
+        "reply": 950,
+        "retain": 0,
+        "total": 1360
+    },
+    "degraded": []
+}
