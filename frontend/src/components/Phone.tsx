@@ -65,11 +65,11 @@ function StatusBar() {
     return () => window.clearInterval(t)
   }, [])
   return (
-    <div className="relative flex h-12 shrink-0 items-center justify-between px-8">
+    <div className="relative flex h-12 shrink-0 items-center justify-between px-[8%]">
       <span className="body-4 tabular-nums">
         {now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: false })}
       </span>
-      <span aria-hidden className="absolute top-3 left-1/2 h-8 w-24 -translate-x-1/2 rounded-full bg-bezel" />
+      <span aria-hidden className="absolute top-3 left-1/2 h-8 w-[30%] -translate-x-1/2 rounded-full bg-bezel" />
       <span className="flex items-center gap-1 text-ink">
         <CellSignalFull size={16} weight="fill" />
         <WifiHigh size={16} weight="bold" />

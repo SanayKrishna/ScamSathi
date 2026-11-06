@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
 import { ArrowRight, Brain, SealCheck, Warning } from '@phosphor-icons/react'
-import { useEffect, useRef, useState } from 'react'
 import { chatNumber } from '../lib/format'
 import { EASE } from '../lib/motion'
 import { useStore, type SeenContradiction } from '../store'
@@ -44,7 +43,7 @@ const STAGE_LABEL: Record<ScriptStage, string> = {
 export function CaughtColumn() {
   const { state } = useStore()
   const { contradictions, memoryEnabled } = state
-  const iocs = useHeardIdentifiers()
+  const iocs = state.heard
 
   return (
     <section aria-label="Caught" className="flex min-h-0 w-full max-w-[440px] flex-col justify-self-start pt-10">
@@ -150,35 +149,6 @@ function Claim({ label, value, muted = false }: { label: string; value: string; 
       </p>
     </div>
   )
-}
-
-/** Unique identifiers extracted across this conversation, newest first. */
-function useHeardIdentifiers(): Ioc[] {
-  const { state } = useStore()
-  const convId = state.conversation?.id ?? null
-  const [list, setList] = useState<Ioc[]>([])
-  const lastSeq = useRef(state.responseSeq)
-  const lastConv = useRef(convId)
-
-  useEffect(() => {
-    if (lastConv.current !== convId) {
-      lastConv.current = convId
-      setList([])
-    }
-  }, [convId])
-
-  useEffect(() => {
-    if (state.responseSeq === lastSeq.current) return
-    lastSeq.current = state.responseSeq
-    const fresh = state.lastResponse?.extracted_iocs ?? []
-    setList((prev) => {
-      const seen = new Set(prev.map((i) => `${i.type}|${i.value}`))
-      const add = fresh.filter((i) => !seen.has(`${i.type}|${i.value}`))
-      return [...add, ...prev]
-    })
-  }, [state.responseSeq, state.lastResponse])
-
-  return list
 }
 
 function Identifiers({ iocs }: { iocs: Ioc[] }) {

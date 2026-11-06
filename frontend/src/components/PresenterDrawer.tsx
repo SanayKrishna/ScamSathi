@@ -30,7 +30,7 @@ const STEPS: { title: string; body: string; memory: 'on' | 'off' }[] = [
   },
   {
     title: 'A ring is exposed',
-    body: 'The graph links Sharma and Verma through one mule account.',
+    body: 'Press G for the network. The graph links Sharma and Verma through one mule account.',
     memory: 'on',
   },
 ]
@@ -39,6 +39,7 @@ const SHORTCUTS: [string, string][] = [
   ['M', 'Toggle memory'],
   ['N', 'New chat'],
   ['P', 'This script'],
+  ['G', 'Switch between call and network'],
   ['Esc', 'Leave the text box so shortcuts work'],
   ['Alt + key', 'Same shortcuts while typing'],
 ]
@@ -56,7 +57,7 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
             onClick={onClose}
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-[2px]"
+            className="fixed inset-0 z-40 bg-black/20 backdrop-blur-[2px]"
           />
           <motion.aside
             key="drawer"
@@ -66,7 +67,7 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.5, ease: EASE }}
-            className="fixed top-4 right-4 bottom-4 z-50 flex w-[440px] flex-col overflow-hidden rounded-3xl border border-line bg-panel/95 shadow-2xl shadow-black backdrop-blur-xl"
+            className="fixed top-4 right-4 bottom-4 z-50 flex w-[440px] flex-col overflow-hidden rounded-3xl bg-white/90 shadow-lift backdrop-blur-2xl"
           >
             <header className="flex items-center justify-between px-6 pt-6 pb-4">
               <div>
@@ -77,7 +78,7 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="rounded-full p-2 text-ink-3 transition-colors hover:bg-raised hover:text-ink"
+                className="rounded-full p-2 text-ink-3 transition-colors hover:bg-fill-2 hover:text-ink"
               >
                 <X size={18} />
               </button>
@@ -90,9 +91,9 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, ease: EASE, delay: 0.1 + i * 0.06 }}
-                  className="flex gap-4 rounded-xl bg-card p-4"
+                  className="flex gap-4 rounded-2xl bg-fill-2 p-4"
                 >
-                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-raised title-4 tabular-nums">
+                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-white title-4 tabular-nums shadow-soft">
                     {i + 1}
                   </span>
                   <div className="min-w-0">
@@ -100,7 +101,7 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
                       <p className="title-3">{s.title}</p>
                       <span
                         className={`rounded-full px-2 py-0.5 caption-3 ${
-                          s.memory === 'on' ? 'bg-mem/15 text-mem' : 'bg-raised text-ink-3'
+                          s.memory === 'on' ? 'bg-mem-soft text-[#1f8a3b]' : 'bg-white text-ink-3'
                         }`}
                       >
                         {s.memory === 'on' ? 'MEMORY ON' : 'MEMORY OFF'}
@@ -112,7 +113,7 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
               ))}
             </ol>
 
-            <footer className="border-t border-line/60 px-6 py-4">
+            <footer className="bg-fill-2/60 px-6 py-4">
               <p className="caption-3 mb-2 uppercase tracking-wider text-ink-3">
                 Shortcuts · memory is {state.memoryEnabled ? 'on' : 'off'}
               </p>
@@ -120,7 +121,7 @@ export function PresenterDrawer({ open, onClose }: { open: boolean; onClose: () 
                 {SHORTCUTS.map(([k, v]) => (
                   <div key={k} className="contents">
                     <dt>
-                      <kbd className="rounded border border-line bg-card px-2 py-0.5 caption-4 font-mono">{k}</kbd>
+                      <kbd className="rounded-md bg-white px-2 py-0.5 caption-4 font-mono shadow-soft">{k}</kbd>
                     </dt>
                     <dd className="body-6 text-ink-2">{v}</dd>
                   </div>

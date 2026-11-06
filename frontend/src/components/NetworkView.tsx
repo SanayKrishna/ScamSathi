@@ -141,7 +141,7 @@ export function NetworkView() {
     link?.distance?.(56)
     fg.d3Force('x', forceX<GNode>(0).strength(0.03) as never)
     fg.d3Force('y', forceY<GNode>(0).strength(0.06) as never)
-    fg.d3Force('collide', forceCollide<GNode>((n) => radius(n) + (n.type === 'alias' ? 34 : 22)) as never)
+    fg.d3Force('collide', forceCollide<GNode>((n) => radius(n) + (n.type === 'alias' ? 36 : n.type === 'upi' ? 32 : 22)) as never)
     fg.d3ReheatSimulation()
   }, [graphReady])
 
@@ -152,7 +152,7 @@ export function NetworkView() {
       n.fy = n.y
     }
     if (cache.current.size > 0) {
-      fgRef.current?.zoomToFit(fitted.current ? 600 : 400, 96)
+      fgRef.current?.zoomToFit(fitted.current ? 600 : 400, 112)
       fitted.current = true
     }
   }, [])
@@ -293,6 +293,7 @@ export function NetworkView() {
         )}
       </div>
 
+      <div className="flex min-h-0 flex-1 gap-4">
       <div className="relative min-h-0 flex-1 overflow-hidden rounded-3xl bg-white shadow-soft">
         <div ref={wrapRef} className="absolute inset-0">
           {!network ? (
@@ -344,11 +345,12 @@ export function NetworkView() {
         </div>
 
         {network && nodeCount > 0 && <Legend />}
-        {rings.length > 0 && <RingList rings={rings} />}
 
         <AnimatePresence>
           {selected && <NodeDetail key={String(selected.id)} node={selected} onClose={() => setSelected(null)} />}
         </AnimatePresence>
+      </div>
+      {rings.length > 0 && <RingList rings={rings} />}
       </div>
     </motion.div>
   )
@@ -376,14 +378,15 @@ function summariseRings(nodes: NetworkNode[]): RingSummary[] {
 
 function RingList({ rings }: { rings: RingSummary[] }) {
   return (
-    <div className="pointer-events-none absolute top-4 left-4 flex w-72 flex-col gap-2">
+    <aside aria-label="Rings" className="flex w-72 shrink-0 flex-col gap-3 overflow-y-auto">
+      <p className="caption-3 px-1 uppercase tracking-wider text-ink-3">Rings exposed</p>
       {rings.map((r, i) => (
         <motion.div
           key={r.id}
           initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, ease: EASE, delay: 0.2 + i * 0.08 }}
-          className="rounded-2xl bg-white/85 p-4 shadow-soft backdrop-blur-xl"
+          className="rounded-2xl bg-white p-4 shadow-soft"
         >
           <div className="flex items-center gap-2">
             <span className="size-2 rounded-full" style={{ background: `rgb(${ringTint(r.id)})` }} />
@@ -400,7 +403,7 @@ function RingList({ rings }: { rings: RingSummary[] }) {
           )}
         </motion.div>
       ))}
-    </div>
+    </aside>
   )
 }
 

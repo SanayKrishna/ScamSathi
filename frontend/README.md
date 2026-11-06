@@ -1,6 +1,8 @@
 # Ajji frontend
 
-React 19, Vite, TypeScript, Tailwind v4, Motion and react-force-graph-2d. The visual rules come from `.claude/skills/landing-page-design` (Part B): Geist, flat dark surfaces, Tailwind type scale and spacing tokens, and one easing curve.
+React 19, Vite, TypeScript, Tailwind v4, Motion and react-force-graph-2d. Light, Apple style: white and light gray surfaces, soft shadows, iOS system accents. The visual rules come from `.claude/skills/landing-page-design` (Part B): Geist, Tailwind type scale and spacing tokens, and one easing curve.
+
+**Layout.** The Call view puts Ajji's iPhone in the centre (an incoming call, then an iMessage thread). What she remembers flies out to the left, contradictions and identifiers she heard to the right, and stats sit in a strip underneath. The Network view (`G`) shows the scam rings full screen.
 
 ## Run
 
@@ -31,13 +33,13 @@ On mocks, put `/degraded` anywhere in a scammer message to preview the degraded 
 | Endpoint | Where the UI uses it | Check |
 |---|---|---|
 | `GET /health` | Header dot, polled every 15 s | Green when all ok, amber "Degraded" when one is down |
-| `GET /stats` | Header tiles | All four numbers render; "est." shows next to minutes |
-| `POST /conversations` | New chat / Start a chat | `opening_line` appears as the first bubble |
-| `POST /conversations/{id}/message` | Composer | Reply appears; memory panel and contradiction cards fill when memory is on and stay empty when it is off |
-| `POST /conversations/{id}/end` | End chat, and before New chat | "Chat ended" divider; composer disabled |
+| `GET /stats` | Stat strip under the stage | All four numbers render; "est." shows next to minutes |
+| `POST /conversations` | New chat / Answer on the incoming call | `opening_line` appears as the first bubble |
+| `POST /conversations/{id}/message` | Composer inside the phone | Reply appears; She remembers and Caught fill when memory is on and stay quiet when it is off; Identifiers heard fills either way |
+| `POST /conversations/{id}/end` | End chat, and before New chat | "Call ended" in the thread; composer disabled |
 | `GET /conversations/{id}` | Page reload mid chat | The thread is restored |
-| `GET /network?conversation_id=` | Network panel, after each message | Rings form; nodes in this chat get a white ring |
-| `POST /demo/seed`, `GET /demo/seed/{job_id}` | Demo menu (sliders icon) | Progress bar advances to done |
+| `GET /network?conversation_id=` | Network view, refreshed after each message | Rings form; nodes in this chat get a blue ring |
+| `POST /demo/seed`, `GET /demo/seed/{job_id}` | Demo menu (⋯ in the top bar) | Progress bar advances to done |
 | `POST /demo/reset` | Demo menu, type RESET | Stats drop to zero |
 | Errors (`ApiError`) | Toast at the bottom | `error.message` shows, never a raw error |
 
@@ -45,7 +47,7 @@ A turn slower than 4 seconds shows "<name> is looking for her glasses..." under 
 
 ## Keyboard shortcuts
 
-`M` toggles memory, `N` starts a new chat and `P` opens the walkthrough script. They work when focus is outside the text box. `Esc` leaves the text box, and `Alt + key` works while typing. Checked at 1920x1080 and 1366x768 with no overflow.
+`M` toggles memory, `N` starts a new chat, `G` switches between Call and Network, and `P` opens the walkthrough script. They work when focus is outside the text box. `Esc` leaves the text box, and `Alt + key` works while typing. Checked at 1920x1080 and 1366x768 with no overflow.
 
 ## Structure
 
@@ -56,5 +58,5 @@ src/
 ├── store.tsx       single useReducer store and actions
 ├── config.ts       env
 ├── mocks/          fixtures from API.md
-└── components/     Header, Chat, MemoryPanel, ContradictionPanel, NetworkGraph, DemoMenu, Toasts
+└── components/     TopBar, Phone, RememberColumn, CaughtColumn, StatStrip, NetworkView, DemoMenu, PresenterDrawer, Toasts
 ```

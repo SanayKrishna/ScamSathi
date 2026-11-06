@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useReducer,
 import { api, ApiClientError } from './api'
 import type {
   ContradictionFlag,
+  Ioc,
   HealthResponse,
   Message,
   NetworkResponse,
@@ -37,6 +38,8 @@ export interface State {
   /** Bumps on every response so panels can replay their entrance animation. */
   responseSeq: number
   contradictions: SeenContradiction[]
+  /** Unique identifiers extracted across this conversation, newest first. */
+  heard: Ioc[]
   memoryEnabled: boolean
   network: NetworkResponse | null
   stats: StatsResponse | null
@@ -52,6 +55,7 @@ const initialState: State = {
   lastResponse: null,
   responseSeq: 0,
   contradictions: [],
+  heard: [],
   memoryEnabled: true,
   network: null,
   stats: null,
@@ -90,6 +94,7 @@ function reducer(state: State, action: Action): State {
         messages: [action.opening],
         lastResponse: null,
         contradictions: [],
+        heard: [],
         pending: 'idle',
       }
     case 'conversation_loaded':
@@ -97,6 +102,7 @@ function reducer(state: State, action: Action): State {
         ...state,
         conversation: { id: action.id, startedAt: action.startedAt, ended: action.ended },
         messages: action.messages,
+        heard: [],
         pending: 'idle',
       }
     case 'scammer_sent':
@@ -112,8 +118,11 @@ function reducer(state: State, action: Action): State {
         0,
         MAX_CONTRADICTIONS,
       )
+      const seen = new Set(state.heard.map((i) => `${i.type}|${i.value}`))
+      const heard = [...r.extracted_iocs.filter((i) => !seen.has(`${i.type}|${i.value}`)), ...state.heard]
       return {
         ...state,
+        heard,
         messages: [
           ...state.messages.map((m) => (m.id === action.scammerTempId ? { ...m, id: r.scammer_message_id } : m)),
           { ...r.reply, degraded: r.degraded },

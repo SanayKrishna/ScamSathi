@@ -21,7 +21,7 @@ export function Toasts() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 8, scale: 0.98 }}
             transition={{ duration: 0.4, ease: EASE }}
-            className="pointer-events-auto flex w-full items-center gap-3 rounded-2xl border border-alert/40 bg-panel/95 py-3 pr-3 pl-4 shadow-2xl shadow-black backdrop-blur-xl"
+            className="pointer-events-auto flex w-full items-center gap-3 rounded-2xl bg-white/90 py-3 pr-3 pl-4 shadow-lift backdrop-blur-2xl"
           >
             <WarningCircle size={20} weight="fill" className="shrink-0 text-alert" />
             <p className="body-3 flex-1 text-ink">{t.message}</p>
@@ -29,7 +29,7 @@ export function Toasts() {
               type="button"
               onClick={() => actions.dismissToast(t.id)}
               aria-label="Dismiss"
-              className="rounded-full p-1 text-ink-3 transition-colors hover:bg-raised hover:text-ink"
+              className="rounded-full p-1 text-ink-3 transition-colors hover:bg-fill-2 hover:text-ink"
             >
               <X size={16} />
             </button>
