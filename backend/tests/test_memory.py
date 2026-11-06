@@ -187,3 +187,43 @@ def test_recall_passes_its_budget_to_the_client(monkeypatch):
 
     memory.recall("query", timeout=1.5)
     assert seen["timeout"] == 1.5
+
+
+def test_not_found_accepts_aiohttp_style_404():
+    class NotFound(Exception):
+        status = 404
+
+    assert memory._not_found(NotFound("404, message='Not Found'"))
+
+
+def test_not_found_rejects_other_errors():
+    class ServerError(Exception):
+        status = 500
+
+    assert not memory._not_found(ServerError("500, message='Server Error'"))
+
+
+def test_ensure_bank_creates_when_lookup_raises_aiohttp_404(monkeypatch):
+    client = FakeClient()
+
+    def get_bank_config(bank_id):
+        class NotFound(Exception):
+            status = 404
+
+        raise NotFound("404, message='Not Found'")
+
+    client.get_bank_config = get_bank_config
+    monkeypatch.setattr(memory, "_get_client", lambda *args, **kwargs: client)
+
+    memory.ensure_bank()
+    assert client.created == [
+        {
+            "bank_id": memory.settings.hindsight_bank_id,
+            "name": "ScamSathi",
+            "mission": (
+                "Long-term memory for a fraud-awareness demo. Store what simulated "
+                "scammers said: aliases, agencies, case numbers, UPI IDs and phones."
+            ),
+            "disposition": {"skepticism": 4, "literalism": 3, "empathy": 4},
+        }
+    ]

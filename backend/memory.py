@@ -82,11 +82,18 @@ def is_configured() -> bool:
 
 
 def _not_found(exc: Exception) -> bool:
+    """Hindsight surfaces a missing bank as aiohttp 404 or ApiException 404."""
+    if getattr(exc, "status", None) == 404:
+        return True
     try:
         from hindsight_client_api.exceptions import ApiException
+
+        if isinstance(exc, ApiException) and getattr(exc, "status", None) == 404:
+            return True
     except Exception:
-        return False
-    return isinstance(exc, ApiException) and getattr(exc, "status", None) == 404
+        pass
+    text = str(exc).lower()
+    return "404" in text and "not found" in text
 
 
 def _fail(action: str, exc: Exception) -> MemoryUnavailable:

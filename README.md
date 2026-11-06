@@ -173,7 +173,7 @@ When `memory_enabled` is false, the agent skips steps 4 and 5 only. It still ext
 │   │   ├── seeder.py         # HTTP seed runner
 │   │   └── run_seed.py       # CLI seed entry point
 │   ├── scripts/              # memory, extraction and turn smoke tests
-│   └── tests/                # 106 offline tests
+│   └── tests/                # 109 offline tests
 └── frontend/
     ├── src/                  # React app, store, API client, mock fixtures
     └── README.md             # UI notes, layout and endpoint checklist
@@ -242,10 +242,15 @@ pip install hindsight-api
 
 $env:HINDSIGHT_API_LLM_PROVIDER = "groq"
 $env:HINDSIGHT_API_LLM_API_KEY  = "your-groq-key"
+$env:HINDSIGHT_API_LLM_GROQ_SERVICE_TIER = "on_demand"
 hindsight-api
 ```
 
 It listens on `http://localhost:8888`, uses an embedded PostgreSQL (`pg0`) for development, and downloads its local embedding/reranker models on first start. Give it a minute and about 1.5 GB of RAM.
+
+> If Hindsight logs `service_tier auto is not available for this org`, set
+> `HINDSIGHT_API_LLM_GROQ_SERVICE_TIER=on_demand` (the value above) before starting it.
+> The Hindsight default is `auto`, which some Groq plans reject.
 
 Then keep `backend/.env` at:
 
@@ -409,7 +414,7 @@ Key codes: `invalid_message`, `conversation_not_found`, `conversation_ended`, `r
 ```powershell
 cd backend
 .venv\Scripts\python -m pytest
-# 106 passed
+# 109 passed
 
 cd ..\frontend
 npm run build

@@ -7,6 +7,7 @@ venv/
 *.db-wal
 *.db-shm
 .pytest_cache/
+.hindsight-venv/
 
 # Secrets and local config
 .env
