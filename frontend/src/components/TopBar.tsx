@@ -14,10 +14,9 @@ interface TopBarProps {
 
 /**
  * Modelled on the Notion Calendar site header: logo mark left, plain dark
- * links in the centre, a quiet text control and one solid black button right.
+ * links in the centre, the memory switch and a solid black Script button right.
  */
 export function TopBar({ view, onView, onOpenPresenter }: TopBarProps) {
-  const { state, actions } = useStore()
   return (
     <header className="relative z-30 grid h-16 shrink-0 grid-cols-[1fr_auto_1fr] items-center bg-white px-6 shadow-[0_1px_0_rgb(0_0_0/0.05)]">
       <div className="flex items-center gap-2">
@@ -32,9 +31,6 @@ export function TopBar({ view, onView, onOpenPresenter }: TopBarProps) {
         <NavLink active={view === 'network'} onClick={() => onView('network')} title="Network (G)">
           Network
         </NavLink>
-        <NavLink onClick={onOpenPresenter} title="Presenter script (P)">
-          Script
-        </NavLink>
         <DemoMenu />
       </nav>
 
@@ -42,13 +38,12 @@ export function TopBar({ view, onView, onOpenPresenter }: TopBarProps) {
         <MemoryToggle />
         <motion.button
           type="button"
-          onClick={actions.newChat}
-          disabled={state.pending !== 'idle'}
+          onClick={onOpenPresenter}
           whileTap={{ scale: 0.97 }}
-          title="New chat (N)"
-          className="rounded-lg bg-ink px-4 py-2 button-sm text-white transition-[background-color,opacity] hover:bg-ink/85 disabled:opacity-40"
+          title="Presenter script (P)"
+          className="rounded-lg bg-ink px-4 py-2 button-sm text-white transition-[background-color] hover:bg-ink/85"
         >
-          New chat
+          Script
         </motion.button>
       </div>
     </header>

@@ -5,6 +5,7 @@ import {
   CellSignalFull,
   PhoneCall,
   PhoneDisconnect,
+  Plus,
   User,
   WarningCircle,
   WifiHigh,
@@ -44,6 +45,10 @@ export function Phone() {
       </div>
 
       <div className="flex items-center gap-2">
+        <PillButton onClick={actions.newChat} disabled={pending !== 'idle'} tone="dark" kbd="N">
+          <Plus size={16} weight="bold" />
+          New chat
+        </PillButton>
         <PillButton onClick={actions.endChat} disabled={!live || pending !== 'idle'} tone="light">
           <PhoneDisconnect size={16} weight="bold" />
           End chat
