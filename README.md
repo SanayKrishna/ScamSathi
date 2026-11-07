@@ -173,7 +173,7 @@ When `memory_enabled` is false, the agent skips steps 4 and 5 only. It still ext
 │   │   ├── seeder.py         # HTTP seed runner
 │   │   └── run_seed.py       # CLI seed entry point
 │   ├── scripts/              # memory, extraction and turn smoke tests
-│   └── tests/                # 109 offline tests
+│   └── tests/                # 111 offline tests
 └── frontend/
     ├── src/                  # React app, store, API client, mock fixtures
     └── README.md             # UI notes, layout and endpoint checklist
@@ -338,10 +338,21 @@ cd backend
 
 Reset calls Hindsight **before** SQLite. If Hindsight is down, `/demo/reset` returns an error and leaves SQLite intact, so you never end up half-reset.
 
+#### Fast, no-Groq seed
+
+The normal seed drives the live API, which uses Groq for IOC extraction and Ajji's replies. On a free Groq tier that can hit the 8k TPM limit. The direct mode writes the same four rings into SQLite and Hindsight with **no HTTP and no Groq calls**:
+
+```powershell
+cd backend
+.venv\Scripts\python simulator\run_seed.py --reset --direct
+```
+
+It creates 20 conversations, the full network, stats and contradictions, and retains the raw messages in Hindsight. Live demo turns still use the real agent. This is the recommended seed path for a free-tier demo; use the normal API seed when you have quota for the full extraction pipeline.
+
 Useful options:
 
 ```powershell
-# Fast template-only seed (fewer Groq calls)
+# Fast template-only API seed (fewer Groq calls)
 .venv\Scripts\python simulator\run_seed.py --reset --no-llm
 
 # Change the count or pace
@@ -432,7 +443,7 @@ Key codes: `invalid_message`, `conversation_not_found`, `conversation_ended`, `r
 ```powershell
 cd backend
 .venv\Scripts\python -m pytest
-# 109 passed
+# 111 passed
 
 cd ..\frontend
 npm run build
