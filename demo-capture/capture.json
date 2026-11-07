@@ -1,0 +1,4176 @@
+{
+  "captured_at": "2026-11-07T07:20:56.295016Z",
+  "health": {
+    "status": "ok",
+    "hindsight": "ok",
+    "llm": "ok",
+    "db": "ok"
+  },
+  "stats_before": {
+    "conversations": 26,
+    "total_minutes_wasted_estimate": 136,
+    "minutes_is_estimate": true,
+    "unique_aliases": 9,
+    "unique_upi": 7,
+    "unique_phones": 8,
+    "rings_detected": 4,
+    "contradictions_caught": 51,
+    "memories_in_bank": 208
+  },
+  "network_before": {
+    "nodes": [
+      {
+        "id": "agency_claimed:income_tax",
+        "type": "agency_claimed",
+        "label": "Income Tax",
+        "first_seen": "2026-11-01T10:01:00Z",
+        "count": 7,
+        "ring_id": null,
+        "in_current": false
+      },
+      {
+        "id": "alias:inspector sharma",
+        "type": "alias",
+        "label": "Inspector Sharma",
+        "first_seen": "2026-11-01T10:01:00Z",
+        "count": 33,
+        "ring_id": "ring_1",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550142233",
+        "type": "phone",
+        "label": "555-014-2233",
+        "first_seen": "2026-11-01T10:01:00Z",
+        "count": 11,
+        "ring_id": "ring_1",
+        "in_current": false
+      },
+      {
+        "id": "upi:sharma.verify@fakebank",
+        "type": "upi",
+        "label": "sharma.verify@fakebank",
+        "first_seen": "2026-11-01T10:07:00Z",
+        "count": 10,
+        "ring_id": "ring_1",
+        "in_current": false
+      },
+      {
+        "id": "agency_claimed:customs",
+        "type": "agency_claimed",
+        "label": "Customs",
+        "first_seen": "2026-11-01T10:21:00Z",
+        "count": 20,
+        "ring_id": null,
+        "in_current": false
+      },
+      {
+        "id": "alias:customs officer rao",
+        "type": "alias",
+        "label": "Customs Officer Rao",
+        "first_seen": "2026-11-01T10:21:00Z",
+        "count": 27,
+        "ring_id": "ring_2",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550189922",
+        "type": "phone",
+        "label": "555-018-9922",
+        "first_seen": "2026-11-01T10:21:00Z",
+        "count": 10,
+        "ring_id": "ring_2",
+        "in_current": false
+      },
+      {
+        "id": "upi:parcel.clear@fakebank",
+        "type": "upi",
+        "label": "parcel.clear@fakebank",
+        "first_seen": "2026-11-01T10:29:00Z",
+        "count": 7,
+        "ring_id": "ring_2",
+        "in_current": false
+      },
+      {
+        "id": "agency_claimed:trai",
+        "type": "agency_claimed",
+        "label": "TRAI",
+        "first_seen": "2026-11-01T10:41:00Z",
+        "count": 52,
+        "ring_id": null,
+        "in_current": false
+      },
+      {
+        "id": "alias:trai officer nair",
+        "type": "alias",
+        "label": "TRAI Officer Nair",
+        "first_seen": "2026-11-01T10:41:00Z",
+        "count": 24,
+        "ring_id": "ring_3",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550117766",
+        "type": "phone",
+        "label": "555-011-7766",
+        "first_seen": "2026-11-01T10:41:00Z",
+        "count": 13,
+        "ring_id": "ring_3",
+        "in_current": false
+      },
+      {
+        "id": "upi:sim.block@fakebank",
+        "type": "upi",
+        "label": "sim.block@fakebank",
+        "first_seen": "2026-11-01T10:46:00Z",
+        "count": 10,
+        "ring_id": "ring_3",
+        "in_current": false
+      },
+      {
+        "id": "agency_claimed:police",
+        "type": "agency_claimed",
+        "label": "Police",
+        "first_seen": "2026-11-01T11:01:00Z",
+        "count": 46,
+        "ring_id": null,
+        "in_current": false
+      },
+      {
+        "id": "alias:sub-inspector patil",
+        "type": "alias",
+        "label": "Sub-Inspector Patil",
+        "first_seen": "2026-11-01T11:01:00Z",
+        "count": 17,
+        "ring_id": "ring_4",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550173344",
+        "type": "phone",
+        "label": "555-017-3344",
+        "first_seen": "2026-11-01T11:01:00Z",
+        "count": 10,
+        "ring_id": "ring_4",
+        "in_current": false
+      },
+      {
+        "id": "upi:narcotics.pay@fakebank",
+        "type": "upi",
+        "label": "narcotics.pay@fakebank",
+        "first_seen": "2026-11-01T11:07:00Z",
+        "count": 14,
+        "ring_id": "ring_4",
+        "in_current": false
+      },
+      {
+        "id": "agency_claimed:cbi",
+        "type": "agency_claimed",
+        "label": "CBI",
+        "first_seen": "2026-11-01T11:21:00Z",
+        "count": 38,
+        "ring_id": null,
+        "in_current": false
+      },
+      {
+        "id": "alias:officer verma",
+        "type": "alias",
+        "label": "Officer Verma",
+        "first_seen": "2026-11-01T11:21:00Z",
+        "count": 18,
+        "ring_id": "ring_1",
+        "in_current": false
+      },
+      {
+        "id": "alias:trai desk mehta",
+        "type": "alias",
+        "label": "TRAI Desk Mehta",
+        "first_seen": "2026-11-01T11:41:00Z",
+        "count": 15,
+        "ring_id": "ring_2",
+        "in_current": false
+      },
+      {
+        "id": "agency_claimed:cyber_cell",
+        "type": "agency_claimed",
+        "label": "Cyber Cell",
+        "first_seen": "2026-11-01T12:01:00Z",
+        "count": 19,
+        "ring_id": null,
+        "in_current": false
+      },
+      {
+        "id": "alias:cyber cell inspector desai",
+        "type": "alias",
+        "label": "Cyber Cell Inspector Desai",
+        "first_seen": "2026-11-01T12:01:00Z",
+        "count": 16,
+        "ring_id": "ring_3",
+        "in_current": false
+      },
+      {
+        "id": "alias:constable joshi",
+        "type": "alias",
+        "label": "Constable Joshi",
+        "first_seen": "2026-11-01T12:21:00Z",
+        "count": 20,
+        "ring_id": "ring_4",
+        "in_current": false
+      },
+      {
+        "id": "upi:cbi.clearance@fakebank",
+        "type": "upi",
+        "label": "cbi.clearance@fakebank",
+        "first_seen": "2026-11-01T12:48:00Z",
+        "count": 1,
+        "ring_id": "ring_1",
+        "in_current": false
+      },
+      {
+        "id": "upi:customs.fee@fakebank",
+        "type": "upi",
+        "label": "customs.fee@fakebank",
+        "first_seen": "2026-11-01T13:07:00Z",
+        "count": 4,
+        "ring_id": "ring_2",
+        "in_current": false
+      },
+      {
+        "id": "alias:inspector kulkarni",
+        "type": "alias",
+        "label": "Inspector Kulkarni",
+        "first_seen": "2026-11-01T13:41:00Z",
+        "count": 12,
+        "ring_id": "ring_4",
+        "in_current": false
+      },
+      {
+        "id": "upi:mumbai.clear@fakebank",
+        "type": "upi",
+        "label": "mumbai.clear@fakebank",
+        "first_seen": "2026-11-01T13:45:00Z",
+        "count": 5,
+        "ring_id": "ring_4",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550142244",
+        "type": "phone",
+        "label": "555-014-2244",
+        "first_seen": "2026-11-01T14:01:00Z",
+        "count": 2,
+        "ring_id": "ring_1",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550189933",
+        "type": "phone",
+        "label": "555-018-9933",
+        "first_seen": "2026-11-01T14:21:00Z",
+        "count": 4,
+        "ring_id": "ring_2",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550117799",
+        "type": "phone",
+        "label": "555-011-7799",
+        "first_seen": "2026-11-01T14:41:00Z",
+        "count": 3,
+        "ring_id": "ring_3",
+        "in_current": false
+      },
+      {
+        "id": "phone:5550173355",
+        "type": "phone",
+        "label": "555-017-3355",
+        "first_seen": "2026-11-01T15:01:00Z",
+        "count": 2,
+        "ring_id": "ring_4",
+        "in_current": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "alias:constable joshi",
+        "target": "agency_claimed:police",
+        "relation": "claims_agency",
+        "weight": 20
+      },
+      {
+        "source": "alias:constable joshi",
+        "target": "phone:5550173344",
+        "relation": "uses_phone",
+        "weight": 5
+      },
+      {
+        "source": "alias:constable joshi",
+        "target": "upi:narcotics.pay@fakebank",
+        "relation": "uses_upi",
+        "weight": 8
+      },
+      {
+        "source": "alias:customs officer rao",
+        "target": "agency_claimed:customs",
+        "relation": "claims_agency",
+        "weight": 11
+      },
+      {
+        "source": "alias:customs officer rao",
+        "target": "agency_claimed:trai",
+        "relation": "claims_agency",
+        "weight": 16
+      },
+      {
+        "source": "alias:customs officer rao",
+        "target": "phone:5550189922",
+        "relation": "uses_phone",
+        "weight": 8
+      },
+      {
+        "source": "alias:customs officer rao",
+        "target": "upi:customs.fee@fakebank",
+        "relation": "uses_upi",
+        "weight": 4
+      },
+      {
+        "source": "alias:customs officer rao",
+        "target": "upi:parcel.clear@fakebank",
+        "relation": "uses_upi",
+        "weight": 3
+      },
+      {
+        "source": "alias:cyber cell inspector desai",
+        "target": "agency_claimed:cyber_cell",
+        "relation": "claims_agency",
+        "weight": 10
+      },
+      {
+        "source": "alias:cyber cell inspector desai",
+        "target": "agency_claimed:trai",
+        "relation": "claims_agency",
+        "weight": 6
+      },
+      {
+        "source": "alias:cyber cell inspector desai",
+        "target": "phone:5550117766",
+        "relation": "uses_phone",
+        "weight": 2
+      },
+      {
+        "source": "alias:cyber cell inspector desai",
+        "target": "phone:5550117799",
+        "relation": "uses_phone",
+        "weight": 3
+      },
+      {
+        "source": "alias:cyber cell inspector desai",
+        "target": "upi:sim.block@fakebank",
+        "relation": "uses_upi",
+        "weight": 5
+      },
+      {
+        "source": "alias:inspector kulkarni",
+        "target": "agency_claimed:police",
+        "relation": "claims_agency",
+        "weight": 12
+      },
+      {
+        "source": "alias:inspector kulkarni",
+        "target": "phone:5550173344",
+        "relation": "uses_phone",
+        "weight": 3
+      },
+      {
+        "source": "alias:inspector kulkarni",
+        "target": "upi:mumbai.clear@fakebank",
+        "relation": "uses_upi",
+        "weight": 5
+      },
+      {
+        "source": "alias:inspector sharma",
+        "target": "agency_claimed:cbi",
+        "relation": "claims_agency",
+        "weight": 26
+      },
+      {
+        "source": "alias:inspector sharma",
+        "target": "agency_claimed:income_tax",
+        "relation": "claims_agency",
+        "weight": 7
+      },
+      {
+        "source": "alias:inspector sharma",
+        "target": "phone:5550142233",
+        "relation": "uses_phone",
+        "weight": 8
+      },
+      {
+        "source": "alias:inspector sharma",
+        "target": "upi:cbi.clearance@fakebank",
+        "relation": "uses_upi",
+        "weight": 1
+      },
+      {
+        "source": "alias:inspector sharma",
+        "target": "upi:sharma.verify@fakebank",
+        "relation": "uses_upi",
+        "weight": 6
+      },
+      {
+        "source": "alias:officer verma",
+        "target": "agency_claimed:cbi",
+        "relation": "claims_agency",
+        "weight": 12
+      },
+      {
+        "source": "alias:officer verma",
+        "target": "agency_claimed:police",
+        "relation": "claims_agency",
+        "weight": 6
+      },
+      {
+        "source": "alias:officer verma",
+        "target": "phone:5550142233",
+        "relation": "uses_phone",
+        "weight": 3
+      },
+      {
+        "source": "alias:officer verma",
+        "target": "phone:5550142244",
+        "relation": "uses_phone",
+        "weight": 2
+      },
+      {
+        "source": "alias:officer verma",
+        "target": "upi:sharma.verify@fakebank",
+        "relation": "uses_upi",
+        "weight": 4
+      },
+      {
+        "source": "alias:sub-inspector patil",
+        "target": "agency_claimed:cyber_cell",
+        "relation": "claims_agency",
+        "weight": 9
+      },
+      {
+        "source": "alias:sub-inspector patil",
+        "target": "agency_claimed:police",
+        "relation": "claims_agency",
+        "weight": 8
+      },
+      {
+        "source": "alias:sub-inspector patil",
+        "target": "phone:5550173344",
+        "relation": "uses_phone",
+        "weight": 2
+      },
+      {
+        "source": "alias:sub-inspector patil",
+        "target": "phone:5550173355",
+        "relation": "uses_phone",
+        "weight": 2
+      },
+      {
+        "source": "alias:sub-inspector patil",
+        "target": "upi:narcotics.pay@fakebank",
+        "relation": "uses_upi",
+        "weight": 6
+      },
+      {
+        "source": "alias:trai desk mehta",
+        "target": "agency_claimed:customs",
+        "relation": "claims_agency",
+        "weight": 9
+      },
+      {
+        "source": "alias:trai desk mehta",
+        "target": "agency_claimed:trai",
+        "relation": "claims_agency",
+        "weight": 6
+      },
+      {
+        "source": "alias:trai desk mehta",
+        "target": "phone:5550189922",
+        "relation": "uses_phone",
+        "weight": 2
+      },
+      {
+        "source": "alias:trai desk mehta",
+        "target": "phone:5550189933",
+        "relation": "uses_phone",
+        "weight": 4
+      },
+      {
+        "source": "alias:trai desk mehta",
+        "target": "upi:parcel.clear@fakebank",
+        "relation": "uses_upi",
+        "weight": 4
+      },
+      {
+        "source": "alias:trai officer nair",
+        "target": "agency_claimed:trai",
+        "relation": "claims_agency",
+        "weight": 24
+      },
+      {
+        "source": "alias:trai officer nair",
+        "target": "phone:5550117766",
+        "relation": "uses_phone",
+        "weight": 11
+      },
+      {
+        "source": "alias:trai officer nair",
+        "target": "upi:sim.block@fakebank",
+        "relation": "uses_upi",
+        "weight": 5
+      }
+    ]
+  },
+  "runs": [
+    {
+      "label": "memory_off",
+      "conversation": {
+        "conversation_id": "conv_0027",
+        "persona": "ajji",
+        "started_at": "2026-11-07T07:20:56Z",
+        "opening_line": "Yes yes, speaking. Who is this? My hearing is not so good."
+      },
+      "turns": [
+        {
+          "scammer_text": "Madam, this is Inspector Sharma from CBI Mumbai. Your Aadhaar is linked to a money laundering case. Do not disconnect the call.",
+          "response": {
+            "conversation_id": "conv_0027",
+            "scammer_message_id": 216,
+            "reply": {
+              "id": 217,
+              "sender": "ajji",
+              "text": "Inspector Sharma, sir? Can you repeat your full name and the case number, please? My hearing is a little weak today.",
+              "created_at": "2026-11-07T07:20:59Z"
+            },
+            "memory_enabled": false,
+            "recalled_memories": [],
+            "extracted_iocs": [
+              {
+                "type": "alias",
+                "value": "inspector sharma"
+              },
+              {
+                "type": "agency_claimed",
+                "value": "cbi"
+              },
+              {
+                "type": "script_stage",
+                "value": "intro_threat"
+              }
+            ],
+            "contradiction_flags": [],
+            "script_stage": "intro_threat",
+            "timings_ms": {
+              "extract": 1359,
+              "recall": 0,
+              "reply": 2025,
+              "retain": 0,
+              "total": 3384
+            },
+            "degraded": []
+          },
+          "network_after": {
+            "nodes": [
+              {
+                "id": "agency_claimed:income_tax",
+                "type": "agency_claimed",
+                "label": "Income Tax",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 7,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector sharma",
+                "type": "alias",
+                "label": "Inspector Sharma",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 34,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550142233",
+                "type": "phone",
+                "label": "555-014-2233",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 11,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:sharma.verify@fakebank",
+                "type": "upi",
+                "label": "sharma.verify@fakebank",
+                "first_seen": "2026-11-01T10:07:00Z",
+                "count": 10,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:customs",
+                "type": "agency_claimed",
+                "label": "Customs",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 20,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:customs officer rao",
+                "type": "alias",
+                "label": "Customs Officer Rao",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 27,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189922",
+                "type": "phone",
+                "label": "555-018-9922",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 10,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "upi:parcel.clear@fakebank",
+                "type": "upi",
+                "label": "parcel.clear@fakebank",
+                "first_seen": "2026-11-01T10:29:00Z",
+                "count": 7,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:trai",
+                "type": "agency_claimed",
+                "label": "TRAI",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 52,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:trai officer nair",
+                "type": "alias",
+                "label": "TRAI Officer Nair",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 24,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117766",
+                "type": "phone",
+                "label": "555-011-7766",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 13,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "upi:sim.block@fakebank",
+                "type": "upi",
+                "label": "sim.block@fakebank",
+                "first_seen": "2026-11-01T10:46:00Z",
+                "count": 10,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:police",
+                "type": "agency_claimed",
+                "label": "Police",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 46,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:sub-inspector patil",
+                "type": "alias",
+                "label": "Sub-Inspector Patil",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 17,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173344",
+                "type": "phone",
+                "label": "555-017-3344",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 10,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:narcotics.pay@fakebank",
+                "type": "upi",
+                "label": "narcotics.pay@fakebank",
+                "first_seen": "2026-11-01T11:07:00Z",
+                "count": 14,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cbi",
+                "type": "agency_claimed",
+                "label": "CBI",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 39,
+                "ring_id": null,
+                "in_current": true
+              },
+              {
+                "id": "alias:officer verma",
+                "type": "alias",
+                "label": "Officer Verma",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 18,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "alias:trai desk mehta",
+                "type": "alias",
+                "label": "TRAI Desk Mehta",
+                "first_seen": "2026-11-01T11:41:00Z",
+                "count": 15,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cyber_cell",
+                "type": "agency_claimed",
+                "label": "Cyber Cell",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 19,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:cyber cell inspector desai",
+                "type": "alias",
+                "label": "Cyber Cell Inspector Desai",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 16,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "alias:constable joshi",
+                "type": "alias",
+                "label": "Constable Joshi",
+                "first_seen": "2026-11-01T12:21:00Z",
+                "count": 20,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:cbi.clearance@fakebank",
+                "type": "upi",
+                "label": "cbi.clearance@fakebank",
+                "first_seen": "2026-11-01T12:48:00Z",
+                "count": 1,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:customs.fee@fakebank",
+                "type": "upi",
+                "label": "customs.fee@fakebank",
+                "first_seen": "2026-11-01T13:07:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector kulkarni",
+                "type": "alias",
+                "label": "Inspector Kulkarni",
+                "first_seen": "2026-11-01T13:41:00Z",
+                "count": 12,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:mumbai.clear@fakebank",
+                "type": "upi",
+                "label": "mumbai.clear@fakebank",
+                "first_seen": "2026-11-01T13:45:00Z",
+                "count": 5,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550142244",
+                "type": "phone",
+                "label": "555-014-2244",
+                "first_seen": "2026-11-01T14:01:00Z",
+                "count": 2,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189933",
+                "type": "phone",
+                "label": "555-018-9933",
+                "first_seen": "2026-11-01T14:21:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117799",
+                "type": "phone",
+                "label": "555-011-7799",
+                "first_seen": "2026-11-01T14:41:00Z",
+                "count": 3,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173355",
+                "type": "phone",
+                "label": "555-017-3355",
+                "first_seen": "2026-11-01T15:01:00Z",
+                "count": 2,
+                "ring_id": "ring_4",
+                "in_current": false
+              }
+            ],
+            "edges": [
+              {
+                "source": "alias:constable joshi",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 20
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 5
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 11
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 16
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:customs.fee@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 10
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117799",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "upi:mumbai.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 27
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:income_tax",
+                "relation": "claims_agency",
+                "weight": 7
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:cbi.clearance@fakebank",
+                "relation": "uses_upi",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 8
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173355",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189933",
+                "relation": "uses_phone",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 24
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 11
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              }
+            ]
+          },
+          "stats_after": {
+            "conversations": 27,
+            "total_minutes_wasted_estimate": 137,
+            "minutes_is_estimate": true,
+            "unique_aliases": 9,
+            "unique_upi": 7,
+            "unique_phones": 8,
+            "rings_detected": 4,
+            "contradictions_caught": 51,
+            "memories_in_bank": 209
+          }
+        },
+        {
+          "scammer_text": "Your case number is DL/4410. Write it down, madam. This is a serious criminal case.",
+          "response": {
+            "conversation_id": "conv_0027",
+            "scammer_message_id": 218,
+            "reply": {
+              "id": 219,
+              "sender": "ajji",
+              "text": "Sir, may I ask which department you are from exactly, and could you tell me the phone number or UPI ID you use for this case? I want to note everything correctly.",
+              "created_at": "2026-11-07T07:21:08Z"
+            },
+            "memory_enabled": false,
+            "recalled_memories": [],
+            "extracted_iocs": [
+              {
+                "type": "case_number",
+                "value": "DL/4410"
+              },
+              {
+                "type": "script_stage",
+                "value": "fake_case_number"
+              }
+            ],
+            "contradiction_flags": [],
+            "script_stage": "fake_case_number",
+            "timings_ms": {
+              "extract": 1155,
+              "recall": 0,
+              "reply": 3132,
+              "retain": 0,
+              "total": 4287
+            },
+            "degraded": []
+          },
+          "network_after": {
+            "nodes": [
+              {
+                "id": "agency_claimed:income_tax",
+                "type": "agency_claimed",
+                "label": "Income Tax",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 7,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector sharma",
+                "type": "alias",
+                "label": "Inspector Sharma",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 34,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550142233",
+                "type": "phone",
+                "label": "555-014-2233",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 11,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:sharma.verify@fakebank",
+                "type": "upi",
+                "label": "sharma.verify@fakebank",
+                "first_seen": "2026-11-01T10:07:00Z",
+                "count": 10,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:customs",
+                "type": "agency_claimed",
+                "label": "Customs",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 20,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:customs officer rao",
+                "type": "alias",
+                "label": "Customs Officer Rao",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 27,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189922",
+                "type": "phone",
+                "label": "555-018-9922",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 10,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "upi:parcel.clear@fakebank",
+                "type": "upi",
+                "label": "parcel.clear@fakebank",
+                "first_seen": "2026-11-01T10:29:00Z",
+                "count": 7,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:trai",
+                "type": "agency_claimed",
+                "label": "TRAI",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 52,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:trai officer nair",
+                "type": "alias",
+                "label": "TRAI Officer Nair",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 24,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117766",
+                "type": "phone",
+                "label": "555-011-7766",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 13,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "upi:sim.block@fakebank",
+                "type": "upi",
+                "label": "sim.block@fakebank",
+                "first_seen": "2026-11-01T10:46:00Z",
+                "count": 10,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:police",
+                "type": "agency_claimed",
+                "label": "Police",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 46,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:sub-inspector patil",
+                "type": "alias",
+                "label": "Sub-Inspector Patil",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 17,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173344",
+                "type": "phone",
+                "label": "555-017-3344",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 10,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:narcotics.pay@fakebank",
+                "type": "upi",
+                "label": "narcotics.pay@fakebank",
+                "first_seen": "2026-11-01T11:07:00Z",
+                "count": 14,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cbi",
+                "type": "agency_claimed",
+                "label": "CBI",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 39,
+                "ring_id": null,
+                "in_current": true
+              },
+              {
+                "id": "alias:officer verma",
+                "type": "alias",
+                "label": "Officer Verma",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 18,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "alias:trai desk mehta",
+                "type": "alias",
+                "label": "TRAI Desk Mehta",
+                "first_seen": "2026-11-01T11:41:00Z",
+                "count": 15,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cyber_cell",
+                "type": "agency_claimed",
+                "label": "Cyber Cell",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 19,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:cyber cell inspector desai",
+                "type": "alias",
+                "label": "Cyber Cell Inspector Desai",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 16,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "alias:constable joshi",
+                "type": "alias",
+                "label": "Constable Joshi",
+                "first_seen": "2026-11-01T12:21:00Z",
+                "count": 20,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:cbi.clearance@fakebank",
+                "type": "upi",
+                "label": "cbi.clearance@fakebank",
+                "first_seen": "2026-11-01T12:48:00Z",
+                "count": 1,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:customs.fee@fakebank",
+                "type": "upi",
+                "label": "customs.fee@fakebank",
+                "first_seen": "2026-11-01T13:07:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector kulkarni",
+                "type": "alias",
+                "label": "Inspector Kulkarni",
+                "first_seen": "2026-11-01T13:41:00Z",
+                "count": 12,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:mumbai.clear@fakebank",
+                "type": "upi",
+                "label": "mumbai.clear@fakebank",
+                "first_seen": "2026-11-01T13:45:00Z",
+                "count": 5,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550142244",
+                "type": "phone",
+                "label": "555-014-2244",
+                "first_seen": "2026-11-01T14:01:00Z",
+                "count": 2,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189933",
+                "type": "phone",
+                "label": "555-018-9933",
+                "first_seen": "2026-11-01T14:21:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117799",
+                "type": "phone",
+                "label": "555-011-7799",
+                "first_seen": "2026-11-01T14:41:00Z",
+                "count": 3,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173355",
+                "type": "phone",
+                "label": "555-017-3355",
+                "first_seen": "2026-11-01T15:01:00Z",
+                "count": 2,
+                "ring_id": "ring_4",
+                "in_current": false
+              }
+            ],
+            "edges": [
+              {
+                "source": "alias:constable joshi",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 20
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 5
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 11
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 16
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:customs.fee@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 10
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117799",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "upi:mumbai.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 27
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:income_tax",
+                "relation": "claims_agency",
+                "weight": 7
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:cbi.clearance@fakebank",
+                "relation": "uses_upi",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 8
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173355",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189933",
+                "relation": "uses_phone",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 24
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 11
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              }
+            ]
+          },
+          "stats_after": {
+            "conversations": 27,
+            "total_minutes_wasted_estimate": 138,
+            "minutes_is_estimate": true,
+            "unique_aliases": 9,
+            "unique_upi": 7,
+            "unique_phones": 8,
+            "rings_detected": 4,
+            "contradictions_caught": 51,
+            "memories_in_bank": 210
+          }
+        }
+      ],
+      "history": {
+        "conversation_id": "conv_0027",
+        "persona": "ajji",
+        "started_at": "2026-11-07T07:20:56Z",
+        "ended_at": null,
+        "messages": [
+          {
+            "id": 215,
+            "sender": "ajji",
+            "text": "Yes yes, speaking. Who is this? My hearing is not so good.",
+            "created_at": "2026-11-07T07:20:56Z"
+          },
+          {
+            "id": 216,
+            "sender": "scammer",
+            "text": "Madam, this is Inspector Sharma from CBI Mumbai. Your Aadhaar is linked to a money laundering case. Do not disconnect the call.",
+            "created_at": "2026-11-07T07:20:56Z"
+          },
+          {
+            "id": 217,
+            "sender": "ajji",
+            "text": "Inspector Sharma, sir? Can you repeat your full name and the case number, please? My hearing is a little weak today.",
+            "created_at": "2026-11-07T07:20:59Z"
+          },
+          {
+            "id": 218,
+            "sender": "scammer",
+            "text": "Your case number is DL/4410. Write it down, madam. This is a serious criminal case.",
+            "created_at": "2026-11-07T07:21:03Z"
+          },
+          {
+            "id": 219,
+            "sender": "ajji",
+            "text": "Sir, may I ask which department you are from exactly, and could you tell me the phone number or UPI ID you use for this case? I want to note everything correctly.",
+            "created_at": "2026-11-07T07:21:08Z"
+          }
+        ]
+      }
+    },
+    {
+      "label": "memory_on",
+      "conversation": {
+        "conversation_id": "conv_0028",
+        "persona": "ajji",
+        "started_at": "2026-11-07T07:21:12Z",
+        "opening_line": "Hello? One minute, let me put my glasses on. Who is calling?"
+      },
+      "turns": [
+        {
+          "scammer_text": "Madam, this is Inspector Sharma from CBI Mumbai. Your Aadhaar is linked to a money laundering case. Do not disconnect the call.",
+          "response": {
+            "conversation_id": "conv_0028",
+            "scammer_message_id": 221,
+            "reply": {
+              "id": 222,
+              "sender": "ajji",
+              "text": "Aiyyo, sir, you said CBI now—earlier I thought it was Income Tax, no? Could you tell me your full name and the case number again, please?",
+              "created_at": "2026-11-07T07:21:17Z"
+            },
+            "memory_enabled": true,
+            "recalled_memories": [
+              {
+                "text": "Inspector Sharma from CBI Mumbai claims the user's Aadhaar is linked to a money laundering case. | When: 2026-11-07 | Where: Mumbai | Involving: Inspector Sharma (CBI), user",
+                "why_relevant": "Same alias seen in an earlier chat",
+                "source_conversation_id": "conv_0027",
+                "matched_ioc": {
+                  "type": "alias",
+                  "value": "inspector sharma"
+                }
+              },
+              {
+                "text": "Inspector Sharma from CBI Mumbai claims the user's Aadhaar is linked to a money laundering case. | When: 2026-11-01 | Where: Mumbai | Involving: Inspector Sharma (CBI Inspector), user",
+                "why_relevant": "Same alias seen in an earlier chat",
+                "source_conversation_id": "conv_0017",
+                "matched_ioc": {
+                  "type": "alias",
+                  "value": "inspector sharma"
+                }
+              },
+              {
+                "text": "An individual using the alias 'inspector sharma' claimed to be from the CBI and cited case number DL/4410. | When: 2026-11-07 | Involving: inspector sharma (alias), CBI (agency) | The interaction reached the 'fake_case_number' stage.",
+                "why_relevant": "Same alias seen in an earlier chat",
+                "source_conversation_id": "conv_0023",
+                "matched_ioc": {
+                  "type": "alias",
+                  "value": "inspector sharma"
+                }
+              },
+              {
+                "text": "Inspector Sharma claimed to be from the CBI and provided a fake case number DL/4410. | When: 2026-11-07 | Involving: Inspector Sharma (impersonator)",
+                "why_relevant": "Same alias seen in an earlier chat",
+                "source_conversation_id": "conv_0024",
+                "matched_ioc": {
+                  "type": "alias",
+                  "value": "inspector sharma"
+                }
+              },
+              {
+                "text": "An individual using the alias 'inspector sharma' claimed to be from the CBI and provided a case number DL/4410. | When: 2026-11-07 | Involving: inspector sharma (alias) | The interaction reached the 'fake_case_number' stage.",
+                "why_relevant": "Same alias seen in an earlier chat",
+                "source_conversation_id": "conv_0025",
+                "matched_ioc": {
+                  "type": "alias",
+                  "value": "inspector sharma"
+                }
+              }
+            ],
+            "extracted_iocs": [
+              {
+                "type": "alias",
+                "value": "inspector sharma"
+              },
+              {
+                "type": "agency_claimed",
+                "value": "cbi"
+              },
+              {
+                "type": "script_stage",
+                "value": "intro_threat"
+              }
+            ],
+            "contradiction_flags": [
+              {
+                "kind": "agency_changed",
+                "claim_now": "CBI",
+                "claim_before": "Income Tax",
+                "source_conversation_id": "conv_0001",
+                "severity": "low"
+              }
+            ],
+            "script_stage": "intro_threat",
+            "timings_ms": {
+              "extract": 1049,
+              "recall": 2183,
+              "reply": 1894,
+              "retain": 0,
+              "total": 5126
+            },
+            "degraded": []
+          },
+          "network_after": {
+            "nodes": [
+              {
+                "id": "agency_claimed:income_tax",
+                "type": "agency_claimed",
+                "label": "Income Tax",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 7,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector sharma",
+                "type": "alias",
+                "label": "Inspector Sharma",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 35,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550142233",
+                "type": "phone",
+                "label": "555-014-2233",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 11,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:sharma.verify@fakebank",
+                "type": "upi",
+                "label": "sharma.verify@fakebank",
+                "first_seen": "2026-11-01T10:07:00Z",
+                "count": 10,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:customs",
+                "type": "agency_claimed",
+                "label": "Customs",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 20,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:customs officer rao",
+                "type": "alias",
+                "label": "Customs Officer Rao",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 27,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189922",
+                "type": "phone",
+                "label": "555-018-9922",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 10,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "upi:parcel.clear@fakebank",
+                "type": "upi",
+                "label": "parcel.clear@fakebank",
+                "first_seen": "2026-11-01T10:29:00Z",
+                "count": 7,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:trai",
+                "type": "agency_claimed",
+                "label": "TRAI",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 52,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:trai officer nair",
+                "type": "alias",
+                "label": "TRAI Officer Nair",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 24,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117766",
+                "type": "phone",
+                "label": "555-011-7766",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 13,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "upi:sim.block@fakebank",
+                "type": "upi",
+                "label": "sim.block@fakebank",
+                "first_seen": "2026-11-01T10:46:00Z",
+                "count": 10,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:police",
+                "type": "agency_claimed",
+                "label": "Police",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 46,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:sub-inspector patil",
+                "type": "alias",
+                "label": "Sub-Inspector Patil",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 17,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173344",
+                "type": "phone",
+                "label": "555-017-3344",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 10,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:narcotics.pay@fakebank",
+                "type": "upi",
+                "label": "narcotics.pay@fakebank",
+                "first_seen": "2026-11-01T11:07:00Z",
+                "count": 14,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cbi",
+                "type": "agency_claimed",
+                "label": "CBI",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 40,
+                "ring_id": null,
+                "in_current": true
+              },
+              {
+                "id": "alias:officer verma",
+                "type": "alias",
+                "label": "Officer Verma",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 18,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "alias:trai desk mehta",
+                "type": "alias",
+                "label": "TRAI Desk Mehta",
+                "first_seen": "2026-11-01T11:41:00Z",
+                "count": 15,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cyber_cell",
+                "type": "agency_claimed",
+                "label": "Cyber Cell",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 19,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:cyber cell inspector desai",
+                "type": "alias",
+                "label": "Cyber Cell Inspector Desai",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 16,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "alias:constable joshi",
+                "type": "alias",
+                "label": "Constable Joshi",
+                "first_seen": "2026-11-01T12:21:00Z",
+                "count": 20,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:cbi.clearance@fakebank",
+                "type": "upi",
+                "label": "cbi.clearance@fakebank",
+                "first_seen": "2026-11-01T12:48:00Z",
+                "count": 1,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:customs.fee@fakebank",
+                "type": "upi",
+                "label": "customs.fee@fakebank",
+                "first_seen": "2026-11-01T13:07:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector kulkarni",
+                "type": "alias",
+                "label": "Inspector Kulkarni",
+                "first_seen": "2026-11-01T13:41:00Z",
+                "count": 12,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:mumbai.clear@fakebank",
+                "type": "upi",
+                "label": "mumbai.clear@fakebank",
+                "first_seen": "2026-11-01T13:45:00Z",
+                "count": 5,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550142244",
+                "type": "phone",
+                "label": "555-014-2244",
+                "first_seen": "2026-11-01T14:01:00Z",
+                "count": 2,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189933",
+                "type": "phone",
+                "label": "555-018-9933",
+                "first_seen": "2026-11-01T14:21:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117799",
+                "type": "phone",
+                "label": "555-011-7799",
+                "first_seen": "2026-11-01T14:41:00Z",
+                "count": 3,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173355",
+                "type": "phone",
+                "label": "555-017-3355",
+                "first_seen": "2026-11-01T15:01:00Z",
+                "count": 2,
+                "ring_id": "ring_4",
+                "in_current": false
+              }
+            ],
+            "edges": [
+              {
+                "source": "alias:constable joshi",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 20
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 5
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 11
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 16
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:customs.fee@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 10
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117799",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "upi:mumbai.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 28
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:income_tax",
+                "relation": "claims_agency",
+                "weight": 7
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:cbi.clearance@fakebank",
+                "relation": "uses_upi",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 8
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173355",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189933",
+                "relation": "uses_phone",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 24
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 11
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              }
+            ]
+          },
+          "stats_after": {
+            "conversations": 28,
+            "total_minutes_wasted_estimate": 139,
+            "minutes_is_estimate": true,
+            "unique_aliases": 9,
+            "unique_upi": 7,
+            "unique_phones": 8,
+            "rings_detected": 4,
+            "contradictions_caught": 52,
+            "memories_in_bank": 211
+          }
+        },
+        {
+          "scammer_text": "Your case number is DL/4410. Write it down, madam. This is a serious criminal case.",
+          "response": {
+            "conversation_id": "conv_0028",
+            "scammer_message_id": 223,
+            "reply": {
+              "id": 224,
+              "sender": "ajji",
+              "text": "Namaskara, sir—please repeat the case number slowly, and also share your official phone number and the UPI ID you use for this?",
+              "created_at": "2026-11-07T07:21:25Z"
+            },
+            "memory_enabled": true,
+            "recalled_memories": [
+              {
+                "text": "The user's criminal case number is DL/4410. | When: 2026-11-01 | Involving: user, Ajji",
+                "why_relevant": "Same case number seen in an earlier chat",
+                "source_conversation_id": "conv_0001",
+                "matched_ioc": {
+                  "type": "case_number",
+                  "value": "DL/4410"
+                }
+              },
+              {
+                "text": "The user's criminal case number is DL/4410. | When: 2026-11-07 | Involving: user",
+                "why_relevant": "Same case number seen in an earlier chat",
+                "source_conversation_id": "conv_0027",
+                "matched_ioc": {
+                  "type": "case_number",
+                  "value": "DL/4410"
+                }
+              },
+              {
+                "text": "Inspector Sharma from CBI Mumbai assigned case number DL/4410 to the user. | When: 2026-11-07 | Where: Mumbai | Involving: Inspector Sharma (CBI), user",
+                "why_relevant": "Same case number seen in an earlier chat",
+                "source_conversation_id": "conv_0023",
+                "matched_ioc": {
+                  "type": "case_number",
+                  "value": "DL/4410"
+                }
+              },
+              {
+                "text": "Inspector Sharma from CBI Mumbai assigned case number DL/4410 to the user. | When: 2026-11-07 | Where: Mumbai | Involving: Inspector Sharma (CBI Inspector), user",
+                "why_relevant": "Same case number seen in an earlier chat",
+                "source_conversation_id": "conv_0022",
+                "matched_ioc": {
+                  "type": "case_number",
+                  "value": "DL/4410"
+                }
+              },
+              {
+                "text": "Inspector Sharma, claiming to be from the CBI, is involved in a case identified by number DL/4410. | When: 2026-11-07 | Involving: Inspector Sharma (CBI agent)",
+                "why_relevant": "Same case number seen in an earlier chat",
+                "source_conversation_id": "conv_0021",
+                "matched_ioc": {
+                  "type": "case_number",
+                  "value": "DL/4410"
+                }
+              }
+            ],
+            "extracted_iocs": [
+              {
+                "type": "case_number",
+                "value": "DL/4410"
+              },
+              {
+                "type": "script_stage",
+                "value": "fake_case_number"
+              }
+            ],
+            "contradiction_flags": [],
+            "script_stage": "fake_case_number",
+            "timings_ms": {
+              "extract": 932,
+              "recall": 1253,
+              "reply": 2244,
+              "retain": 0,
+              "total": 4429
+            },
+            "degraded": []
+          },
+          "network_after": {
+            "nodes": [
+              {
+                "id": "agency_claimed:income_tax",
+                "type": "agency_claimed",
+                "label": "Income Tax",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 7,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector sharma",
+                "type": "alias",
+                "label": "Inspector Sharma",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 35,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550142233",
+                "type": "phone",
+                "label": "555-014-2233",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 11,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:sharma.verify@fakebank",
+                "type": "upi",
+                "label": "sharma.verify@fakebank",
+                "first_seen": "2026-11-01T10:07:00Z",
+                "count": 10,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:customs",
+                "type": "agency_claimed",
+                "label": "Customs",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 20,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:customs officer rao",
+                "type": "alias",
+                "label": "Customs Officer Rao",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 27,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189922",
+                "type": "phone",
+                "label": "555-018-9922",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 10,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "upi:parcel.clear@fakebank",
+                "type": "upi",
+                "label": "parcel.clear@fakebank",
+                "first_seen": "2026-11-01T10:29:00Z",
+                "count": 7,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:trai",
+                "type": "agency_claimed",
+                "label": "TRAI",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 52,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:trai officer nair",
+                "type": "alias",
+                "label": "TRAI Officer Nair",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 24,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117766",
+                "type": "phone",
+                "label": "555-011-7766",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 13,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "upi:sim.block@fakebank",
+                "type": "upi",
+                "label": "sim.block@fakebank",
+                "first_seen": "2026-11-01T10:46:00Z",
+                "count": 10,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:police",
+                "type": "agency_claimed",
+                "label": "Police",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 46,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:sub-inspector patil",
+                "type": "alias",
+                "label": "Sub-Inspector Patil",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 17,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173344",
+                "type": "phone",
+                "label": "555-017-3344",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 10,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:narcotics.pay@fakebank",
+                "type": "upi",
+                "label": "narcotics.pay@fakebank",
+                "first_seen": "2026-11-01T11:07:00Z",
+                "count": 14,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cbi",
+                "type": "agency_claimed",
+                "label": "CBI",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 40,
+                "ring_id": null,
+                "in_current": true
+              },
+              {
+                "id": "alias:officer verma",
+                "type": "alias",
+                "label": "Officer Verma",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 18,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "alias:trai desk mehta",
+                "type": "alias",
+                "label": "TRAI Desk Mehta",
+                "first_seen": "2026-11-01T11:41:00Z",
+                "count": 15,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cyber_cell",
+                "type": "agency_claimed",
+                "label": "Cyber Cell",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 19,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:cyber cell inspector desai",
+                "type": "alias",
+                "label": "Cyber Cell Inspector Desai",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 16,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "alias:constable joshi",
+                "type": "alias",
+                "label": "Constable Joshi",
+                "first_seen": "2026-11-01T12:21:00Z",
+                "count": 20,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:cbi.clearance@fakebank",
+                "type": "upi",
+                "label": "cbi.clearance@fakebank",
+                "first_seen": "2026-11-01T12:48:00Z",
+                "count": 1,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:customs.fee@fakebank",
+                "type": "upi",
+                "label": "customs.fee@fakebank",
+                "first_seen": "2026-11-01T13:07:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector kulkarni",
+                "type": "alias",
+                "label": "Inspector Kulkarni",
+                "first_seen": "2026-11-01T13:41:00Z",
+                "count": 12,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:mumbai.clear@fakebank",
+                "type": "upi",
+                "label": "mumbai.clear@fakebank",
+                "first_seen": "2026-11-01T13:45:00Z",
+                "count": 5,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550142244",
+                "type": "phone",
+                "label": "555-014-2244",
+                "first_seen": "2026-11-01T14:01:00Z",
+                "count": 2,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189933",
+                "type": "phone",
+                "label": "555-018-9933",
+                "first_seen": "2026-11-01T14:21:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117799",
+                "type": "phone",
+                "label": "555-011-7799",
+                "first_seen": "2026-11-01T14:41:00Z",
+                "count": 3,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173355",
+                "type": "phone",
+                "label": "555-017-3355",
+                "first_seen": "2026-11-01T15:01:00Z",
+                "count": 2,
+                "ring_id": "ring_4",
+                "in_current": false
+              }
+            ],
+            "edges": [
+              {
+                "source": "alias:constable joshi",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 20
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 5
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 11
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 16
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:customs.fee@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 10
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117799",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "upi:mumbai.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 28
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:income_tax",
+                "relation": "claims_agency",
+                "weight": 7
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:cbi.clearance@fakebank",
+                "relation": "uses_upi",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 8
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173355",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189933",
+                "relation": "uses_phone",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 24
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 11
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              }
+            ]
+          },
+          "stats_after": {
+            "conversations": 28,
+            "total_minutes_wasted_estimate": 140,
+            "minutes_is_estimate": true,
+            "unique_aliases": 9,
+            "unique_upi": 7,
+            "unique_phones": 8,
+            "rings_detected": 4,
+            "contradictions_caught": 52,
+            "memories_in_bank": 212
+          }
+        },
+        {
+          "scammer_text": "I need to verify your face on a video call now. Open WhatsApp and call this number 5550142244.",
+          "response": {
+            "conversation_id": "conv_0028",
+            "scammer_message_id": 225,
+            "reply": {
+              "id": 226,
+              "sender": "ajji",
+              "text": "Beta, sir, I’m a bit shaky—could you please confirm that number once more? And may I have your full name and the agency’s email address, please?",
+              "created_at": "2026-11-07T07:21:35Z"
+            },
+            "memory_enabled": true,
+            "recalled_memories": [
+              {
+                "text": "Ajji requires a video call verification of the user's face. | When: 2026-11-01 | Involving: Ajji, user | Identity verification",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0017",
+                "matched_ioc": null
+              },
+              {
+                "text": "Ajji instructed the user to call 5550142233 via WhatsApp for verification. | When: 2026-11-01 | Where: WhatsApp | Involving: Ajji, user | To perform the requested video call verification",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0017",
+                "matched_ioc": null
+              },
+              {
+                "text": "Ajji requested a video call to verify the user's face and Aadhaar. | When: 2026-11-01 | Involving: Ajji, user | Identity verification",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0014",
+                "matched_ioc": null
+              },
+              {
+                "text": "User is required to join a video call at 5550173344 for identity and environment verification by an officer. | When: 2026-11-01 | Involving: user, officer | Verification of face and room.",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0008",
+                "matched_ioc": null
+              },
+              {
+                "text": "Ajji requested a video call to 5550189922 to verify the user's face and Aadhaar. | When: 2026-11-01 | Involving: Ajji, user | Identity verification",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0010",
+                "matched_ioc": null
+              }
+            ],
+            "extracted_iocs": [
+              {
+                "type": "phone",
+                "value": "5550142244"
+              },
+              {
+                "type": "script_stage",
+                "value": "video_call_demand"
+              }
+            ],
+            "contradiction_flags": [
+              {
+                "kind": "alias_shares_phone",
+                "claim_now": "This caller used 5550142244",
+                "claim_before": "Officer Verma used 5550142244",
+                "source_conversation_id": "conv_0013",
+                "severity": "low"
+              }
+            ],
+            "script_stage": "video_call_demand",
+            "timings_ms": {
+              "extract": 1104,
+              "recall": 2030,
+              "reply": 2372,
+              "retain": 0,
+              "total": 5506
+            },
+            "degraded": []
+          },
+          "network_after": {
+            "nodes": [
+              {
+                "id": "agency_claimed:income_tax",
+                "type": "agency_claimed",
+                "label": "Income Tax",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 7,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector sharma",
+                "type": "alias",
+                "label": "Inspector Sharma",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 35,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550142233",
+                "type": "phone",
+                "label": "555-014-2233",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 11,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:sharma.verify@fakebank",
+                "type": "upi",
+                "label": "sharma.verify@fakebank",
+                "first_seen": "2026-11-01T10:07:00Z",
+                "count": 10,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:customs",
+                "type": "agency_claimed",
+                "label": "Customs",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 20,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:customs officer rao",
+                "type": "alias",
+                "label": "Customs Officer Rao",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 27,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189922",
+                "type": "phone",
+                "label": "555-018-9922",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 10,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "upi:parcel.clear@fakebank",
+                "type": "upi",
+                "label": "parcel.clear@fakebank",
+                "first_seen": "2026-11-01T10:29:00Z",
+                "count": 7,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:trai",
+                "type": "agency_claimed",
+                "label": "TRAI",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 52,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:trai officer nair",
+                "type": "alias",
+                "label": "TRAI Officer Nair",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 24,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117766",
+                "type": "phone",
+                "label": "555-011-7766",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 13,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "upi:sim.block@fakebank",
+                "type": "upi",
+                "label": "sim.block@fakebank",
+                "first_seen": "2026-11-01T10:46:00Z",
+                "count": 10,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:police",
+                "type": "agency_claimed",
+                "label": "Police",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 46,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:sub-inspector patil",
+                "type": "alias",
+                "label": "Sub-Inspector Patil",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 17,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173344",
+                "type": "phone",
+                "label": "555-017-3344",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 10,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:narcotics.pay@fakebank",
+                "type": "upi",
+                "label": "narcotics.pay@fakebank",
+                "first_seen": "2026-11-01T11:07:00Z",
+                "count": 14,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cbi",
+                "type": "agency_claimed",
+                "label": "CBI",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 40,
+                "ring_id": null,
+                "in_current": true
+              },
+              {
+                "id": "alias:officer verma",
+                "type": "alias",
+                "label": "Officer Verma",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 18,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "alias:trai desk mehta",
+                "type": "alias",
+                "label": "TRAI Desk Mehta",
+                "first_seen": "2026-11-01T11:41:00Z",
+                "count": 15,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cyber_cell",
+                "type": "agency_claimed",
+                "label": "Cyber Cell",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 19,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:cyber cell inspector desai",
+                "type": "alias",
+                "label": "Cyber Cell Inspector Desai",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 16,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "alias:constable joshi",
+                "type": "alias",
+                "label": "Constable Joshi",
+                "first_seen": "2026-11-01T12:21:00Z",
+                "count": 20,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:cbi.clearance@fakebank",
+                "type": "upi",
+                "label": "cbi.clearance@fakebank",
+                "first_seen": "2026-11-01T12:48:00Z",
+                "count": 1,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:customs.fee@fakebank",
+                "type": "upi",
+                "label": "customs.fee@fakebank",
+                "first_seen": "2026-11-01T13:07:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector kulkarni",
+                "type": "alias",
+                "label": "Inspector Kulkarni",
+                "first_seen": "2026-11-01T13:41:00Z",
+                "count": 12,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:mumbai.clear@fakebank",
+                "type": "upi",
+                "label": "mumbai.clear@fakebank",
+                "first_seen": "2026-11-01T13:45:00Z",
+                "count": 5,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550142244",
+                "type": "phone",
+                "label": "555-014-2244",
+                "first_seen": "2026-11-01T14:01:00Z",
+                "count": 3,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550189933",
+                "type": "phone",
+                "label": "555-018-9933",
+                "first_seen": "2026-11-01T14:21:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117799",
+                "type": "phone",
+                "label": "555-011-7799",
+                "first_seen": "2026-11-01T14:41:00Z",
+                "count": 3,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173355",
+                "type": "phone",
+                "label": "555-017-3355",
+                "first_seen": "2026-11-01T15:01:00Z",
+                "count": 2,
+                "ring_id": "ring_4",
+                "in_current": false
+              }
+            ],
+            "edges": [
+              {
+                "source": "alias:constable joshi",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 20
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 5
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 11
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 16
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:customs.fee@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 10
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117799",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "upi:mumbai.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 28
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:income_tax",
+                "relation": "claims_agency",
+                "weight": 7
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:cbi.clearance@fakebank",
+                "relation": "uses_upi",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 8
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173355",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189933",
+                "relation": "uses_phone",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 24
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 11
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              }
+            ]
+          },
+          "stats_after": {
+            "conversations": 28,
+            "total_minutes_wasted_estimate": 140,
+            "minutes_is_estimate": true,
+            "unique_aliases": 9,
+            "unique_upi": 7,
+            "unique_phones": 8,
+            "rings_detected": 4,
+            "contradictions_caught": 53,
+            "memories_in_bank": 213
+          }
+        },
+        {
+          "scammer_text": "To clear your name, transfer Rs 49,000 to cbi.clearance@fakebank. It is refundable.",
+          "response": {
+            "conversation_id": "conv_0028",
+            "scammer_message_id": 227,
+            "reply": {
+              "id": 228,
+              "sender": "ajji",
+              "text": "Sir, could you tell me exactly which bank account number ends with? And also, may I have your name and a contact email, just so I can note everything correctly?",
+              "created_at": "2026-11-07T07:21:45Z"
+            },
+            "memory_enabled": true,
+            "recalled_memories": [
+              {
+                "text": "The user is instructed to transfer Rs 49,000 to a government verification account for name clearance. | When: 2026-11-01 | Where: cbi.clearance@fakebank | Involving: Ajji | To clear the user's name.",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0009",
+                "matched_ioc": null
+              },
+              {
+                "text": "The user is instructed to transfer Rs 49,000 to a government verification account (sharma.verify@fakebank) to clear their name, with the promise that the amount is refundable. | When: 2026-11-01 | Involving: Ajji | Verification transfer",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0005",
+                "matched_ioc": null
+              },
+              {
+                "text": "User requested a transfer of Rs 49,000 to sharma.verify@fakebank using NEFT or UPI. | When: 2026-11-01 | Involving: user, sharma.verify@fakebank | To close the case.",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0005",
+                "matched_ioc": null
+              },
+              {
+                "text": "User intends to send Rs 49,000 to sharma.verify@fakebank using NEFT or UPI. | When: 2026-11-01 | Involving: user, sharma.verify@fakebank | To close a case today.",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0013",
+                "matched_ioc": null
+              },
+              {
+                "text": "The user is instructed to transfer Rs 75,000 to a government verification account (sharma.verify@fakebank) to clear their name, with the claim that the funds are refundable. | When: 2026-11-01 | Involving: Ajji | To clear the user's name.",
+                "why_relevant": "Related to what this scammer just said",
+                "source_conversation_id": "conv_0001",
+                "matched_ioc": null
+              }
+            ],
+            "extracted_iocs": [
+              {
+                "type": "script_stage",
+                "value": "verification_transfer"
+              }
+            ],
+            "contradiction_flags": [],
+            "script_stage": "verification_transfer",
+            "timings_ms": {
+              "extract": 1297,
+              "recall": 1572,
+              "reply": 3491,
+              "retain": 0,
+              "total": 6360
+            },
+            "degraded": []
+          },
+          "network_after": {
+            "nodes": [
+              {
+                "id": "agency_claimed:income_tax",
+                "type": "agency_claimed",
+                "label": "Income Tax",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 7,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector sharma",
+                "type": "alias",
+                "label": "Inspector Sharma",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 35,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550142233",
+                "type": "phone",
+                "label": "555-014-2233",
+                "first_seen": "2026-11-01T10:01:00Z",
+                "count": 11,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:sharma.verify@fakebank",
+                "type": "upi",
+                "label": "sharma.verify@fakebank",
+                "first_seen": "2026-11-01T10:07:00Z",
+                "count": 10,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:customs",
+                "type": "agency_claimed",
+                "label": "Customs",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 20,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:customs officer rao",
+                "type": "alias",
+                "label": "Customs Officer Rao",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 27,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550189922",
+                "type": "phone",
+                "label": "555-018-9922",
+                "first_seen": "2026-11-01T10:21:00Z",
+                "count": 10,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "upi:parcel.clear@fakebank",
+                "type": "upi",
+                "label": "parcel.clear@fakebank",
+                "first_seen": "2026-11-01T10:29:00Z",
+                "count": 7,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:trai",
+                "type": "agency_claimed",
+                "label": "TRAI",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 52,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:trai officer nair",
+                "type": "alias",
+                "label": "TRAI Officer Nair",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 24,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117766",
+                "type": "phone",
+                "label": "555-011-7766",
+                "first_seen": "2026-11-01T10:41:00Z",
+                "count": 13,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "upi:sim.block@fakebank",
+                "type": "upi",
+                "label": "sim.block@fakebank",
+                "first_seen": "2026-11-01T10:46:00Z",
+                "count": 10,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:police",
+                "type": "agency_claimed",
+                "label": "Police",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 46,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:sub-inspector patil",
+                "type": "alias",
+                "label": "Sub-Inspector Patil",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 17,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173344",
+                "type": "phone",
+                "label": "555-017-3344",
+                "first_seen": "2026-11-01T11:01:00Z",
+                "count": 10,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:narcotics.pay@fakebank",
+                "type": "upi",
+                "label": "narcotics.pay@fakebank",
+                "first_seen": "2026-11-01T11:07:00Z",
+                "count": 14,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cbi",
+                "type": "agency_claimed",
+                "label": "CBI",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 40,
+                "ring_id": null,
+                "in_current": true
+              },
+              {
+                "id": "alias:officer verma",
+                "type": "alias",
+                "label": "Officer Verma",
+                "first_seen": "2026-11-01T11:21:00Z",
+                "count": 18,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "alias:trai desk mehta",
+                "type": "alias",
+                "label": "TRAI Desk Mehta",
+                "first_seen": "2026-11-01T11:41:00Z",
+                "count": 15,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "agency_claimed:cyber_cell",
+                "type": "agency_claimed",
+                "label": "Cyber Cell",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 19,
+                "ring_id": null,
+                "in_current": false
+              },
+              {
+                "id": "alias:cyber cell inspector desai",
+                "type": "alias",
+                "label": "Cyber Cell Inspector Desai",
+                "first_seen": "2026-11-01T12:01:00Z",
+                "count": 16,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "alias:constable joshi",
+                "type": "alias",
+                "label": "Constable Joshi",
+                "first_seen": "2026-11-01T12:21:00Z",
+                "count": 20,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:cbi.clearance@fakebank",
+                "type": "upi",
+                "label": "cbi.clearance@fakebank",
+                "first_seen": "2026-11-01T12:48:00Z",
+                "count": 1,
+                "ring_id": "ring_1",
+                "in_current": false
+              },
+              {
+                "id": "upi:customs.fee@fakebank",
+                "type": "upi",
+                "label": "customs.fee@fakebank",
+                "first_seen": "2026-11-01T13:07:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "alias:inspector kulkarni",
+                "type": "alias",
+                "label": "Inspector Kulkarni",
+                "first_seen": "2026-11-01T13:41:00Z",
+                "count": 12,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "upi:mumbai.clear@fakebank",
+                "type": "upi",
+                "label": "mumbai.clear@fakebank",
+                "first_seen": "2026-11-01T13:45:00Z",
+                "count": 5,
+                "ring_id": "ring_4",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550142244",
+                "type": "phone",
+                "label": "555-014-2244",
+                "first_seen": "2026-11-01T14:01:00Z",
+                "count": 3,
+                "ring_id": "ring_1",
+                "in_current": true
+              },
+              {
+                "id": "phone:5550189933",
+                "type": "phone",
+                "label": "555-018-9933",
+                "first_seen": "2026-11-01T14:21:00Z",
+                "count": 4,
+                "ring_id": "ring_2",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550117799",
+                "type": "phone",
+                "label": "555-011-7799",
+                "first_seen": "2026-11-01T14:41:00Z",
+                "count": 3,
+                "ring_id": "ring_3",
+                "in_current": false
+              },
+              {
+                "id": "phone:5550173355",
+                "type": "phone",
+                "label": "555-017-3355",
+                "first_seen": "2026-11-01T15:01:00Z",
+                "count": 2,
+                "ring_id": "ring_4",
+                "in_current": false
+              }
+            ],
+            "edges": [
+              {
+                "source": "alias:constable joshi",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 20
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 5
+              },
+              {
+                "source": "alias:constable joshi",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 11
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 16
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:customs.fee@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:customs officer rao",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 10
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "phone:5550117799",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:cyber cell inspector desai",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:inspector kulkarni",
+                "target": "upi:mumbai.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 28
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "agency_claimed:income_tax",
+                "relation": "claims_agency",
+                "weight": 7
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 8
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:cbi.clearance@fakebank",
+                "relation": "uses_upi",
+                "weight": 1
+              },
+              {
+                "source": "alias:inspector sharma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:cbi",
+                "relation": "claims_agency",
+                "weight": 12
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142233",
+                "relation": "uses_phone",
+                "weight": 3
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "phone:5550142244",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:officer verma",
+                "target": "upi:sharma.verify@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:cyber_cell",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "agency_claimed:police",
+                "relation": "claims_agency",
+                "weight": 8
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173344",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "phone:5550173355",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:sub-inspector patil",
+                "target": "upi:narcotics.pay@fakebank",
+                "relation": "uses_upi",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:customs",
+                "relation": "claims_agency",
+                "weight": 9
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 6
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189922",
+                "relation": "uses_phone",
+                "weight": 2
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "phone:5550189933",
+                "relation": "uses_phone",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai desk mehta",
+                "target": "upi:parcel.clear@fakebank",
+                "relation": "uses_upi",
+                "weight": 4
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "agency_claimed:trai",
+                "relation": "claims_agency",
+                "weight": 24
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "phone:5550117766",
+                "relation": "uses_phone",
+                "weight": 11
+              },
+              {
+                "source": "alias:trai officer nair",
+                "target": "upi:sim.block@fakebank",
+                "relation": "uses_upi",
+                "weight": 5
+              }
+            ]
+          },
+          "stats_after": {
+            "conversations": 28,
+            "total_minutes_wasted_estimate": 141,
+            "minutes_is_estimate": true,
+            "unique_aliases": 9,
+            "unique_upi": 7,
+            "unique_phones": 8,
+            "rings_detected": 4,
+            "contradictions_caught": 53,
+            "memories_in_bank": 214
+          }
+        }
+      ],
+      "history": {
+        "conversation_id": "conv_0028",
+        "persona": "ajji",
+        "started_at": "2026-11-07T07:21:12Z",
+        "ended_at": null,
+        "messages": [
+          {
+            "id": 220,
+            "sender": "ajji",
+            "text": "Hello? One minute, let me put my glasses on. Who is calling?",
+            "created_at": "2026-11-07T07:21:12Z"
+          },
+          {
+            "id": 221,
+            "sender": "scammer",
+            "text": "Madam, this is Inspector Sharma from CBI Mumbai. Your Aadhaar is linked to a money laundering case. Do not disconnect the call.",
+            "created_at": "2026-11-07T07:21:12Z"
+          },
+          {
+            "id": 222,
+            "sender": "ajji",
+            "text": "Aiyyo, sir, you said CBI now—earlier I thought it was Income Tax, no? Could you tell me your full name and the case number again, please?",
+            "created_at": "2026-11-07T07:21:17Z"
+          },
+          {
+            "id": 223,
+            "sender": "scammer",
+            "text": "Your case number is DL/4410. Write it down, madam. This is a serious criminal case.",
+            "created_at": "2026-11-07T07:21:21Z"
+          },
+          {
+            "id": 224,
+            "sender": "ajji",
+            "text": "Namaskara, sir—please repeat the case number slowly, and also share your official phone number and the UPI ID you use for this?",
+            "created_at": "2026-11-07T07:21:25Z"
+          },
+          {
+            "id": 225,
+            "sender": "scammer",
+            "text": "I need to verify your face on a video call now. Open WhatsApp and call this number 5550142244.",
+            "created_at": "2026-11-07T07:21:29Z"
+          },
+          {
+            "id": 226,
+            "sender": "ajji",
+            "text": "Beta, sir, I’m a bit shaky—could you please confirm that number once more? And may I have your full name and the agency’s email address, please?",
+            "created_at": "2026-11-07T07:21:35Z"
+          },
+          {
+            "id": 227,
+            "sender": "scammer",
+            "text": "To clear your name, transfer Rs 49,000 to cbi.clearance@fakebank. It is refundable.",
+            "created_at": "2026-11-07T07:21:39Z"
+          },
+          {
+            "id": 228,
+            "sender": "ajji",
+            "text": "Sir, could you tell me exactly which bank account number ends with? And also, may I have your name and a contact email, just so I can note everything correctly?",
+            "created_at": "2026-11-07T07:21:45Z"
+          }
+        ]
+      }
+    }
+  ]
+}
