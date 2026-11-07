@@ -135,6 +135,12 @@ def print_side_by_side(off: dict[str, Any], on: dict[str, Any]) -> None:
     if on["degraded"]:
         print(f"  on  degraded: {on['degraded']}")
 
+    if on["recalled_memories"]:
+        print("\nrecalled (memory on):")
+        for memory in on["recalled_memories"]:
+            source = memory.get("source_conversation_id") or "?"
+            print(f"  - [{source}] {memory['text']}")
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="J1 live demo check.")

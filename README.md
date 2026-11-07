@@ -110,12 +110,28 @@ The persona prompt treats the scammer’s message as untrusted dialogue and forb
 |---|---|---|---|
 | `ensure_bank()` | `main.lifespan`, `scripts/memory_smoke.py` | On API startup, if `HINDSIGHT_URL` is set | Creates bank `scam-intel` if missing |
 | `recall(query)` | `agent.handle_message`, step 4 | Only when `memory_enabled` is true | Up to 5 memories with `text` and parsed `source_conversation_id` |
-| `retain_message(...)` | `agent.retain_safely`, scheduled by `POST /conversations/{id}/message` | After every message, memory on or off | Raw scammer message + context |
+| `retain_message(...)` | `agent.retain_safely`, scheduled by `POST /conversations/{id}/message` | After every message, memory on or off | Scammer message + context; Hindsight extracts facts and entities from it |
 | `retain_summary(...)` | `agent.retain_summary_safely`, scheduled by `POST /conversations/{id}/end` | First `/end` for a conversation | Readable paragraph of aliases, agencies, cases, UPIs, phones, stages, tactics |
-| `reset_bank()` | `POST /demo/reset` | When reset is confirmed | Deletes and recreates `scam-intel` |
+| `reset_bank()` | `POST /demo/reset`, `run_seed.py --reset` | When reset is confirmed | Deletes and recreates `scam-intel` |
+| `delete_bank()` | `reset_bank()`, `scripts/cloud_check.py` | Reset, and cleanup of the throwaway test bank | Deletes the bank; no error if it is already gone |
 | `memory_count()` | Not currently wired into `/stats` | — | Exists for future use; `/stats` uses a SQLite estimate |
 
 `reflect` is **not used** in the current build. The recall loop is the critical path.
+
+### What Hindsight does with each retain
+
+On Hindsight Cloud, every `retain` runs fact extraction: Hindsight rewrites the message into standalone facts, tags the people and things involved, and links those entities across the whole bank. `recall` returns those extracted facts, not the raw messages, and they are what the “She remembers” panel shows.
+
+A real fact recalled for the Inspector Sharma opener used by `scripts/demo_check.py`:
+
+```
+An individual using the alias 'inspector sharma' claimed to be from the 'income_tax'
+agency and initiated a fraudulent case (DL/4410) involving threats, isolation, and
+demands for a video call and verification transfer. | When: 2026-11-07 | Involving:
+inspector sharma (fraudster)
+```
+
+The backend shows `text` as Hindsight returns it, and adds `why_relevant` and `matched_ioc` from the IOCs extracted on this turn.
 
 ### What context is stored
 
@@ -154,7 +170,6 @@ When `memory_enabled` is false, the agent skips steps 4 and 5 only. It still ext
 ├── README.md                 # this file
 ├── API.md                    # backend/frontend contract
 ├── architecture.md           # system design and turn flow
-├── prompts.md                # build plan used to create the project
 ├── diagrams/                 # the four SVGs in this README
 ├── backend/
 │   ├── main.py               # FastAPI app, routes, CORS, error shape
@@ -172,7 +187,7 @@ When `memory_enabled` is false, the agent skips steps 4 and 5 only. It still ext
 │   │   ├── scammer.py        # LLM scammer + template fallback
 │   │   ├── seeder.py         # HTTP seed runner
 │   │   └── run_seed.py       # CLI seed entry point
-│   ├── scripts/              # memory, extraction and turn smoke tests
+│   ├── scripts/              # Cloud, memory, extraction and turn checks
 │   └── tests/                # 112 offline tests
 └── frontend/
     ├── src/                  # React app, store, API client, mock fixtures
@@ -188,7 +203,7 @@ When `memory_enabled` is false, the agent skips steps 4 and 5 only. It still ext
 - Python **3.11+** (tested on 3.12)
 - Node **22+** (tested on Node 24)
 - A **Groq** API key
-- A **Hindsight** endpoint: local `hindsight-api` on `localhost:8888`, or Hindsight Cloud
+- A **Hindsight Cloud** API key (self-hosted works too, see the offline fallback)
 
 ### 1. Backend environment
 
@@ -213,8 +228,8 @@ cp .env.example .env
 Fill in `backend/.env`:
 
 ```dotenv
-HINDSIGHT_URL=http://localhost:8888
-HINDSIGHT_API_KEY=
+HINDSIGHT_URL=https://api.hindsight.vectorize.io
+HINDSIGHT_API_KEY=your-hindsight-key
 HINDSIGHT_BANK_ID=scam-intel
 
 GROQ_API_KEY=your-groq-key
@@ -229,62 +244,39 @@ CORS_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
 
 `backend/.env` is gitignored. Never commit a key.
 
-### 2. Hindsight
+### 2. Hindsight Cloud
 
-#### Local (recommended for the demo)
+1. **Sign up** for Hindsight Cloud.
+2. **Add credits.** Add credits under **Billing** before creating anything.
+3. **Create a key.** Go to **Connect → Create API Key** and copy it into `HINDSIGHT_API_KEY`.
+4. **Set the base URL.** Set `HINDSIGHT_URL=https://api.hindsight.vectorize.io`.
 
-Run Hindsight in a separate terminal. It needs its own LLM key for fact extraction; the same Groq key works.
+There is nothing to run locally. Cloud does the fact extraction and entity linking itself, so it needs no LLM key from you. The bank `scam-intel` is created by `ensure_bank()` when the API starts.
+
+To check the connection without touching the demo bank:
+
+```powershell
+cd backend
+.venv\Scripts\python scripts\cloud_check.py
+```
+
+It creates a throwaway bank `scam-intel-test`, retains three messages in which Inspector Sharma and Officer Verma share `sharma.verify@fakebank`, and recalls that UPI. It polls for up to 60 s if extraction is still running and prints each result as `fact` or `RAW MESSAGE`. It deletes the test bank at the end.
+
+#### Offline fallback (self-hosted, no fact extraction)
+
+If Cloud is unreachable, you can run Hindsight locally with no LLM:
 
 ```powershell
 python -m venv .hindsight-venv
 .hindsight-venv\Scripts\activate
 pip install hindsight-api
-
-$env:HINDSIGHT_API_LLM_PROVIDER = "groq"
-$env:HINDSIGHT_API_LLM_API_KEY  = "your-groq-key"
-$env:HINDSIGHT_API_LLM_GROQ_SERVICE_TIER = "on_demand"
-hindsight-api
-```
-
-It listens on `http://localhost:8888`, uses an embedded PostgreSQL (`pg0`) for development, and downloads its local embedding/reranker models on first start. Give it a minute and about 1.5 GB of RAM.
-
-> If Hindsight logs `service_tier auto is not available for this org`, set
-> `HINDSIGHT_API_LLM_GROQ_SERVICE_TIER=on_demand` (the value above) before starting it.
-> The Hindsight default is `auto`, which some Groq plans reject.
-
-#### Low-quota / offline fallback
-
-Hindsight's fact extraction is token-heavy. Groq's free tier is **8,000 tokens per
-minute**, and one retain can request several thousand tokens; Hindsight itself
-recommends a paid tier for Groq. If you do not have a paid tier or Cloud credits,
-run Hindsight with no LLM:
-
-```powershell
 $env:HINDSIGHT_API_LLM_PROVIDER = "none"
 hindsight-api
 ```
 
-Retain then stores each message as a chunk (no fact extraction) and recall uses the
-local embedding + reranker. The memory panel shows the raw earlier messages rather
-than extracted facts; the SQLite graph, stats and contradictions are unchanged.
-Reset and reseed after switching. This is the most reliable path for a demo on a
-free-tier key.
+Set `HINDSIGHT_URL=http://localhost:8888` and leave `HINDSIGHT_API_KEY` empty, then reset and reseed.
 
-Then keep `backend/.env` at:
-
-```dotenv
-HINDSIGHT_URL=http://localhost:8888
-HINDSIGHT_API_KEY=
-```
-
-#### Hindsight Cloud
-
-```dotenv
-HINDSIGHT_URL=https://api.hindsight.vectorize.io
-HINDSIGHT_API_KEY=your-hindsight-key
-```
-
-Add credits under **Hindsight Cloud → Billing** before creating the bank. The bank `scam-intel` is created automatically by `ensure_bank()` on API startup.
+**This disables fact extraction.** Each message is stored as a raw chunk and recall returns the earlier messages word for word. The SQLite graph, stats and contradictions are unchanged.
 
 ### 3. Groq
 
@@ -347,7 +339,7 @@ cd backend
 .venv\Scripts\python simulator\run_seed.py --reset --direct
 ```
 
-It creates 20 conversations, the full network, stats and contradictions, and retains the raw messages in Hindsight. Live demo turns still use the real agent. This is the recommended seed path for a free-tier demo; use the normal API seed when you have quota for the full extraction pipeline.
+It creates 20 conversations, the full network, stats and contradictions, and retains every message in Hindsight, where Cloud extracts facts from them. Live demo turns still use the real agent. This is the recommended seed path for a free-tier demo; use the normal API seed when you have Groq quota for live IOC extraction and replies.
 
 Useful options:
 
@@ -459,15 +451,10 @@ Backend tests are offline: Groq and Hindsight are monkeypatched. They cover IOC 
 ## Known limitations and honest notes
 
 - **Everything is simulated.** No real phone numbers are dialled, no real messages are sent, and all identifiers are fake. The LLM is instructed never to produce real-looking personal or financial data; a leak filter replaces prompt-like replies.
-- **Hindsight recall is the critical path.** If Hindsight is down, the app still answers, but the memory panel is empty and the turn carries `recall_unavailable`. Start Hindsight before the demo.
+- **Hindsight recall is the critical path.** If Hindsight is down, the app still answers, but the memory panel is empty and the turn carries `recall_unavailable`. Run `scripts/cloud_check.py` and check your Cloud credits before the demo.
 - **`/health` reports configuration, not a live ping.** It says `hindsight: "ok"` when `HINDSIGHT_URL` is set. Actual recall failures show up per turn in `degraded`.
 - **`memories_in_bank` in `/stats` is a SQLite estimate** (scammer messages + ended conversations), not a live Hindsight count. The header only displays four stats anyway.
 - **Contradictions use SQLite, not Hindsight.** They are exact, deterministic and gated by the same memory toggle; they are capped at three per turn and only compare other conversations.
-- **Hindsight's fact extraction needs a paid Groq tier or Cloud.** The free
-  8,000 TPM limit is smaller than one retain request. For the demo, use
-  `HINDSIGHT_API_LLM_PROVIDER=none` (raw chunks, local embeddings) or Hindsight
-  Cloud. The graph and contradictions still work; the memory panel shows raw
-  earlier messages instead of extracted facts.
 - **The seed can be slow on Groq’s free tier.** It paces turns and retries 429s, but 20 conversations still take minutes. Use a paid tier or `--no-llm` for the scammer lines.
 - **The seed job calls the API over HTTP.** If the backend is not on `127.0.0.1:8000`, set `SEED_BASE_URL` in `backend/.env`.
 - **Reload restores the thread, not the side panels.** The frontend restores messages from `GET /conversations/{id}`; memories, contradictions and identifiers refill on the next message.

@@ -154,8 +154,8 @@ def ensure_bank() -> None:
         _close(client)
 
 
-def reset_bank() -> None:
-    """Delete and recreate the bank. Safe to call when it is already gone."""
+def delete_bank() -> None:
+    """Delete the bank. Safe to call when it is already gone."""
     client = _get_client()
     try:
         try:
@@ -166,6 +166,11 @@ def reset_bank() -> None:
                 raise _fail("bank delete", exc) from exc
     finally:
         _close(client)
+
+
+def reset_bank() -> None:
+    """Delete and recreate the bank. Safe to call when it is already gone."""
+    delete_bank()
     ensure_bank()
 
 
