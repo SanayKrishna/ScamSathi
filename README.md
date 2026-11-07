@@ -1,5 +1,9 @@
 # ScamSathi
 
+▶ **Demo video:** [Watch on YouTube](https://www.youtube.com/watch?v=Sdyz24Q063o)
+
+Built by team **404BrainNotFound**.
+
 ScamSathi is a working demo of **Ajji**, an AI grandmother who answers a “digital arrest” scam call, keeps the scammer talking, extracts the identifiers they use, and remembers every previous caller in one shared memory bank. Flip memory off and she is a generic stalling chatbot. Flip it on and she recognises a reused mule account, catches a changed case number, and exposes the ring in a live network graph.
 
 **All scammers, calls, messages and identifiers in this repository are simulated.** Nothing here dials or messages a real person, and every UPI handle, phone number and case number is obviously fake.
@@ -482,4 +486,4 @@ Backend tests are offline: Groq and Hindsight are monkeypatched. They cover IOC 
 - **React 19**, Vite, TypeScript, Tailwind v4, Motion, react-force-graph-2d
 - Product name **ScamSathi**; persona **Ajji**. Both are configurable (`VITE_PRODUCT_NAME`, `VITE_PERSONA_NAME`, `PERSONA_NAME`).
 
-The design and the build plan are in [`architecture.md`](architecture.md) and [`prompts.md`](prompts.md). The contract between the backend and frontend is [`API.md`](API.md).
+The design is in [`architecture.md`](architecture.md). The contract between the backend and frontend is [`API.md`](API.md).

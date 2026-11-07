@@ -31,3 +31,8 @@ Thumbs.db
 
 # Local agent settings
 .claude/
+
+# Local voice generation (not committed)
+voice-samples/
+voice/
+scripts/sarvam_tts.py
