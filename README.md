@@ -1,6 +1,6 @@
 # ScamSathi
 
-▶ **Demo video:** [Watch on YouTube](https://www.youtube.com/watch?v=Sdyz24Q063o)
+**Demo video:** [Watch on YouTube](https://www.youtube.com/watch?v=Sdyz24Q063o)
 
 Built by team **404BrainNotFound**.
 
