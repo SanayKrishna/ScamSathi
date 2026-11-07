@@ -25,3 +25,6 @@ dist-ssr/
 Thumbs.db
 .vscode/
 .idea/
+
+# Archives
+*.zip
