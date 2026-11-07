@@ -180,8 +180,8 @@ def test_agency_changed_for_the_same_alias(database):
     assert flags == [
         {
             "kind": "agency_changed",
-            "claim_now": "Inspector Sharma claims Customs",
-            "claim_before": "Inspector Sharma claimed CBI",
+            "claim_now": "Customs",
+            "claim_before": "CBI",
             "source_conversation_id": "conv_0001",
             "severity": "low",
         }
@@ -344,8 +344,8 @@ def test_agency_changed_for_a_phone_without_an_alias(database):
     assert flags == [
         {
             "kind": "agency_changed",
-            "claim_now": "This caller claims Customs",
-            "claim_before": "This caller claimed CBI",
+            "claim_now": "Customs",
+            "claim_before": "CBI",
             "source_conversation_id": "conv_0001",
             "severity": "low",
         }

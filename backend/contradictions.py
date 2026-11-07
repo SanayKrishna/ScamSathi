@@ -210,11 +210,8 @@ def _agency_change_for_alias(
             flags.append(
                 {
                     "kind": "agency_changed",
-                    "claim_now": f"{_alias_label(alias)} claims {_agency_label(agency)}",
-                    "claim_before": (
-                        f"{_alias_label(alias)} claimed "
-                        f"{_agency_label(row['previous_agency'])}"
-                    ),
+                    "claim_now": _agency_label(agency),
+                    "claim_before": _agency_label(row["previous_agency"]),
                     "source_conversation_id": row["source_conversation_id"],
                     "severity": "low",
                 }
@@ -268,10 +265,8 @@ def _agency_change_for_phone(
             flags.append(
                 {
                     "kind": "agency_changed",
-                    "claim_now": f"This caller claims {_agency_label(agency)}",
-                    "claim_before": (
-                        f"This caller claimed {_agency_label(row['previous_agency'])}"
-                    ),
+                    "claim_now": _agency_label(agency),
+                    "claim_before": _agency_label(row["previous_agency"]),
                     "source_conversation_id": row["source_conversation_id"],
                     "severity": "low",
                 }

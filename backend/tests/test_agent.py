@@ -168,6 +168,7 @@ def test_turn_memory_on_attaches_recalled_memories(database, configured, monkeyp
     assert "MH/2291" in system_prompt
     assert "chat #7" in system_prompt
     assert "Contradictions you can probe" in system_prompt
+    assert "must mention at least one" in system_prompt
     assert "The case number changed" in system_prompt
 
 

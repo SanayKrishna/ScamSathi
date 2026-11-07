@@ -80,7 +80,11 @@ def _memory_block(memories: list[dict[str, Any]], contradictions: list[dict[str,
             lines.append(f"- {text}" + (f" (from chat {chat})" if chat else ""))
 
     if contradictions:
-        lines.append("Contradictions you can probe innocently, in character:")
+        lines.append(
+            "Contradictions you can probe innocently. If this list is not empty, "
+            "your reply must mention at least one of them naturally in the first "
+            "sentence:"
+        )
         for flag in contradictions:
             label = CONTRADICTION_LABELS.get(flag.get("kind", ""), "Their story changed")
             chat = _chat_number(flag.get("source_conversation_id"))
