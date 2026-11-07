@@ -28,3 +28,6 @@ Thumbs.db
 
 # Archives
 *.zip
+
+# Local agent settings
+.claude/
