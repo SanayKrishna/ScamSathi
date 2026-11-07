@@ -228,3 +228,15 @@ def test_ensure_bank_creates_when_lookup_raises_aiohttp_404(monkeypatch):
             "enable_observations": False,
         }
     ]
+
+
+def test_fail_keeps_status_and_provider_body_for_debugging():
+    class ProviderError(Exception):
+        status = 500
+        body = '{"detail":"model not found"}'
+
+    error = memory._fail("retain", ProviderError("boom"))
+    message = str(error)
+    assert "status=500" in message
+    assert "model not found" in message
+    assert "ProviderError" in message

@@ -96,9 +96,26 @@ def _not_found(exc: Exception) -> bool:
     return "404" in text and "not found" in text
 
 
+def _describe(exc: Exception) -> str:
+    """Keep enough detail to debug a provider/schema error, without a stack trace."""
+    parts = [type(exc).__name__]
+    status = getattr(exc, "status", None)
+    if status:
+        parts.append(f"status={status}")
+    for attribute in ("body", "data", "reason"):
+        value = getattr(exc, attribute, None)
+        if value:
+            parts.append(str(value)[:400])
+            break
+    text = str(exc).strip() or repr(exc)
+    parts.append(text)
+    return " | ".join(parts)[:700]
+
+
 def _fail(action: str, exc: Exception) -> MemoryUnavailable:
-    logger.warning("Hindsight %s failed: %s", action, exc)
-    return MemoryUnavailable(f"Hindsight {action} failed.")
+    detail = _describe(exc)
+    logger.warning("Hindsight %s failed: %s", action, detail)
+    return MemoryUnavailable(f"Hindsight {action} failed: {detail}")
 
 
 def ensure_bank() -> None:

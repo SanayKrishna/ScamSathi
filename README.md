@@ -173,7 +173,7 @@ When `memory_enabled` is false, the agent skips steps 4 and 5 only. It still ext
 │   │   ├── seeder.py         # HTTP seed runner
 │   │   └── run_seed.py       # CLI seed entry point
 │   ├── scripts/              # memory, extraction and turn smoke tests
-│   └── tests/                # 111 offline tests
+│   └── tests/                # 112 offline tests
 └── frontend/
     ├── src/                  # React app, store, API client, mock fixtures
     └── README.md             # UI notes, layout and endpoint checklist
@@ -443,7 +443,7 @@ Key codes: `invalid_message`, `conversation_not_found`, `conversation_ended`, `r
 ```powershell
 cd backend
 .venv\Scripts\python -m pytest
-# 111 passed
+# 112 passed
 
 cd ..\frontend
 npm run build
